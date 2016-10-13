@@ -110,7 +110,6 @@ function saveMessage(text) {
     json: params,
   }, function(error, response, body) {
     console.log(response.statusCode);
-    res.json(response);
   });
 }
 
