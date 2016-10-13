@@ -96,9 +96,9 @@ function randomInt (low, high) {
 function saveMessage(text) {
 
   var params = {
-    "id": randomInt(10,10000000)
-    "userId": 1
-    "datetime": "2001-07-26T00:00:00.000Z"
+    "id": randomInt(10,10000000),
+    "userId": 1,
+    "datetime": "2001-07-26T00:00:00.000Z",
     "message": text
   };
 
