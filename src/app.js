@@ -42,6 +42,10 @@ function processEvent(event) {
                 let responseData = response.result.fulfillment.data;
                 let action = response.result.action;
 
+                //Save the message in the DB
+                console.log('responseData', responseData);
+                saveMessage(text);
+
                 if (isDefined(responseData) && isDefined(responseData.facebook)) {
                     if (!Array.isArray(responseData.facebook)) {
                         try {
@@ -83,6 +87,31 @@ function processEvent(event) {
         apiaiRequest.on('error', (error) => console.error(error));
         apiaiRequest.end();
     }
+}
+
+function randomInt (low, high) {
+    return Math.floor(Math.random() * (high - low) + low);
+}
+
+function saveMessage(text) {
+
+  var params = {
+    "id": randomInt(10,10000000)
+    "userId": 1
+    "datetime": "2001-07-26T00:00:00.000Z"
+    "message": text
+  };
+
+  console.log(params);
+
+  request({
+    url: 'https://doctorsh-api.herokuapp.com/api/Messages',
+    method: 'POST',
+    json: params,
+  }, function(error, response, body) {
+    console.log(response.statusCode);
+    res.json(response);
+  });
 }
 
 function splitResponse(str) {
