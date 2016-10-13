@@ -7,6 +7,7 @@ const uuid = require('node-uuid');
 const request = require('request');
 const JSONbig = require('json-bigint');
 const async = require('async');
+const moment = require('moment');
 
 const REST_PORT = (process.env.PORT || 5000);
 const APIAI_ACCESS_TOKEN = process.env.APIAI_ACCESS_TOKEN;
@@ -30,6 +31,7 @@ function processEvent(event) {
 
         console.log("Text", text);
         console.log("Sender", event.sender);
+        console.log('uuid.v1()', uuid.v1());
 
         let apiaiRequest = apiAiService.textRequest(text,
             {
@@ -43,7 +45,6 @@ function processEvent(event) {
                 let action = response.result.action;
 
                 //Save the message in the DB
-                console.log('responseData', responseData);
                 saveMessage(text);
 
                 if (isDefined(responseData) && isDefined(responseData.facebook)) {
@@ -98,7 +99,7 @@ function saveMessage(text) {
   var params = {
     "id": randomInt(10,10000000),
     "userId": 1,
-    "datetime": "2001-07-26T00:00:00.000Z",
+    "datetime": moment().format(),
     "message": text
   };
 
