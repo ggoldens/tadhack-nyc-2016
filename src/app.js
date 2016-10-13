@@ -29,7 +29,7 @@ function processEvent(event) {
         }
 
         console.log("Text", text);
-        console.log("Sender", sender);
+        console.log("Sender", event.sender);
 
         let apiaiRequest = apiAiService.textRequest(text,
             {
