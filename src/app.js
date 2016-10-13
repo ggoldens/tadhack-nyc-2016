@@ -196,6 +196,10 @@ const app = express();
 
 app.use(bodyParser.text({type: 'application/json'}));
 
+app.get('/privacy', (req, res) => {
+    res.send('Privacy Policy page');
+});
+
 app.get('/webhook/', (req, res) => {
     if (req.query['hub.verify_token'] == FB_VERIFY_TOKEN) {
         res.send(req.query['hub.challenge']);
