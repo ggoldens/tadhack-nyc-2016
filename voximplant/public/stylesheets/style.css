@@ -259,6 +259,6 @@ div.pstnImage i.uk-icon-phone-square {
     }
 }
 
-.hidden {
+#control_panel {
   display: none !important;
 }
