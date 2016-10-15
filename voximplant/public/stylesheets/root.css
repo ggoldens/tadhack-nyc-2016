@@ -1,0 +1,2219 @@
+/* ================================================
+Google Web Fonts
+================================================ */
+/* Istok Web */
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,700,400italic);
+/* === Icons === */
+/* Font Awesome */
+@import url('plugin/font-awesome/font-awesome.min.css');
+/* ================================================
+Main Css
+================================================ */
+/* Bootstrap Main Css File (unedited) */
+/* Shortcuts Css Codes */
+/** Shortcuts **/
+/*** Float ***/
+@import url('plugin/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css');
+@import url('plugin/bootstrap-select/bootstrap-select.css');
+@import url('plugin/bootstrap-toggle/bootstrap-toggle.min.css');
+.float-l {
+  float: left;
+}
+.float-r {
+  float: right;
+}
+.float-none {
+  float: none;
+}
+/** Text Align **/
+.text-l {
+  text-align: left;
+}
+.text-r {
+  text-align: right;
+}
+.text-c {
+  text-align: center;
+}
+/** Border None **/
+.border-b-none {
+  border-bottom: none;
+}
+.border-t-none {
+  border-top: none;
+}
+.border-l-none {
+  border-left: none;
+}
+.border-r-none {
+  border-right: none;
+}
+.border-none {
+  border: none;
+}
+/** Display **/
+.display-block {
+  display: block;
+}
+.hidden {
+  display: none;
+}
+/** Font Size **/
+/** Text Ellipsis **/
+/** http:// lesselements .com **/
+/*Whit to Black Grad*/
+.b2w-grad {
+  background: -moz-linear-gradient(top, rgba(255, 255, 255, 0.1) 0%, rgba(0, 0, 0, 0) 100%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0.1) 0%, rgba(0, 0, 0, 0) 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.1) 0%, rgba(0, 0, 0, 0) 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#1affffff', endColorstr='#00000000', GradientType=0);
+  /* IE6-9 */
+}
+.flex-container {
+  -ms-box-orient: horizontal;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: flex;
+}
+.perfect-center {
+  -ms-box-orient: horizontal;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+/** Intrinsic Aspect Ratio **/
+/* Main Css Codes */
+/* ===== Color Setup ===== */
+/*Mock Colors*/
+/* Telehealth colors*/
+/* Fonts */
+.ths-widget-wrapper {
+  font-family: 'Helvetica Neue', helvetica, arial, sans-serif;
+  color: #343c3e;
+  font-weight: normal;
+}
+.ths-widget-wrapper h1,
+.ths-widget-wrapper h2,
+.ths-widget-wrapper h3,
+.ths-widget-wrapper h4,
+.ths-widget-wrapper h5,
+.ths-widget-wrapper h6,
+.ths-widget-wrapper .h1,
+.ths-widget-wrapper .h2,
+.ths-widget-wrapper .h3,
+.ths-widget-wrapper .h4 {
+  font-family: 'Helvetica Neue', helvetica, arial, sans-serif;
+  color: #343c3e;
+  font-weight: normal;
+  font-weight: 700;
+}
+html,
+body,
+div,
+span,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+abbr,
+address,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+samp,
+small,
+strong,
+sub,
+sup,
+var,
+b,
+i,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+body {
+  line-height: 1;
+}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+nav ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+a {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+/* change colours to suit your needs */
+ins {
+  background-color: #ff9;
+  color: #000;
+  text-decoration: none;
+}
+/* change colours to suit your needs */
+mark {
+  background-color: #ff9;
+  color: #000;
+  font-style: italic;
+  font-weight: bold;
+}
+del {
+  text-decoration: line-through;
+}
+abbr[title],
+dfn[title] {
+  border-bottom: 1px dotted;
+  cursor: help;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/* change border colour to suit your needs */
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #cccccc;
+  margin: 1em 0;
+  padding: 0;
+}
+input,
+select {
+  vertical-align: middle;
+}
+a,
+button {
+  background: none;
+  outline: none;
+  border: none;
+}
+a:hover,
+a:focus,
+button:hover,
+button:focus {
+  outline: none;
+}
+.main-bg {
+  position: relative;
+  width: 100%;
+  min-height: 100%;
+  background-position: center top;
+}
+.error-bar {
+  height: ;
+  text-align: center;
+  background: rgba(248, 231, 28, 0.25);
+  color: #ad7212;
+  line-height: 32px;
+  font-size: 12px;
+  font-weight: bold;
+}
+.error-bar.warning {
+  background: rgba(248, 231, 28, 0.25);
+  color: #ad7212;
+}
+.error-bar.danger {
+  background: #d22e42;
+  color: #fff;
+}
+.annotation-toolbar-container {
+  position: fixed;
+  top: 125px;
+  right: 0;
+  width: 40px;
+  z-index: 1000;
+}
+.annotation-toolbar-container > div input {
+  display: block;
+  top: 0 !important;
+  transform: none !important;
+}
+.annotation-toolbar-container > div input#OT_colors {
+  width: 30px;
+  margin-right: 5px !important;
+  margin-left: 5px !important;
+  padding: 0;
+}
+.annotation-toolbar-container > div .OT_subpanel,
+.annotation-toolbar-container > div .color-picker {
+  position: absolute;
+  top: 0;
+  right: 40px;
+  padding-left: 0 !important;
+}
+.annotation-toolbar-container > div .OT_subpanel {
+  left: -40px;
+  overflow: hidden;
+}
+.annotation-toolbar-container > div .OT_subpanel > div {
+  top: 0 !important;
+  transform: none !important;
+}
+.annotation-toolbar-container > div .color-picker {
+  left: -30px;
+}
+.annotation-toolbar-container > div .color-picker .color-choice {
+  display: block !important;
+  height: 20px !important;
+  width: 20px !important;
+}
+.annotation-aspect {
+  width: 100% !important;
+  height: 0 !important;
+  padding-bottom: 60% !important;
+}
+#opentok_canvas {
+  top: 0;
+  left: 0;
+}
+#endScreenShareBtn.annotation-active {
+  position: fixed;
+  top: 5px;
+  right: 5px;
+}
+/* Responsive Style */
+html,
+body {
+  font-family: 'Helvetica Neue', helvetica, arial, sans-serif;
+  font-weight: 300;
+}
+.test {
+  z-index: 100000;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  margin-left: -460px;
+  width: 920px;
+  height: 100%;
+  border: 1px solid red;
+}
+.advisor-mock.landing {
+  background-color: #5c5c5c;
+}
+.advisor-mock header {
+  position: relative;
+  height: 160px;
+  margin: 0;
+}
+.advisor-mock header .client-menu-overlay {
+  background: rgba(0, 0, 0, 0.5);
+  height: 91.5px;
+  width: 100%;
+  position: absolute;
+  top: 0;
+}
+.advisor-mock header .client-menu-overlay .client-menu-container {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  -ms-box-orient: horizontal;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+}
+.advisor-mock header .client-menu-overlay .client-menu-container.no-padding {
+  padding: 0;
+}
+.advisor-mock header .client-menu-overlay .client-menu-container .client-menu-logo-container {
+  margin-left: 20px;
+  height: 100%;
+  color: white;
+  width: 300px;
+  -ms-box-orient: horizontal;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: flex;
+}
+.advisor-mock header .client-menu-overlay .client-menu-container .client-menu-logo-container .logo-image {
+  background-image: url(../images/mocks/simple-care-l-o-g-o.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100%;
+  height: 100%;
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
+  .advisor-mock header .client-menu-overlay .client-menu-container .client-menu-logo-container .logo-image {
+    background-image: url(../images/mocks/simple-care-l-o-g-o@2x.png);
+    background-size: 100% auto;
+  }
+}
+.advisor-mock header .client-menu-overlay .client-menu-container .client-menu {
+  height: 100%;
+  color: white;
+  padding-right: 20px;
+}
+.advisor-mock header .client-menu-overlay .client-menu-container .client-menu .client-menu-item {
+  position: relative;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  height: 91.5px;
+  line-height: 91.5px;
+  padding: 0 30px 0 15px;
+}
+.advisor-mock header .client-menu-overlay .client-menu-container .client-menu .client-menu-item.active {
+  height: 60px;
+  border-bottom: 3px solid #fff;
+  width: auto;
+  padding: 0;
+  margin: 0 30px 0 15px;
+}
+.advisor-mock header .client-menu-overlay .client-menu-container .client-menu .client-menu-item .investing-menu {
+  display: none;
+  width: 100%;
+  position: absolute;
+  list-style: none;
+  top: 65.5px;
+  left: 0px;
+  background: #f2f2f2;
+  color: #343c3e;
+}
+.advisor-mock header .client-menu-overlay .client-menu-container .client-menu .client-menu-item .investing-menu .investing-menu-item {
+  position: relative;
+  height: 45px;
+  line-height: 45px;
+  padding-left: 20px;
+  box-sizing: border-box;
+  border-top: 1px solid transparent;
+  border-bottom: 1px solid transparent;
+}
+.advisor-mock header .client-menu-overlay .client-menu-container .client-menu .client-menu-item .investing-menu .investing-menu-item:hover {
+  color: #52acbd;
+  background: white;
+  border-color: #f2f2f2;
+}
+.advisor-mock header .client-menu-overlay .client-menu-container .client-menu .client-menu-item .investing-menu .investing-menu-item a {
+  text-decoration: none;
+  color: inherit;
+}
+.advisor-mock header .client-menu-overlay .client-menu-container .client-menu .client-menu-item.login-actions {
+  color: white;
+  padding: 0;
+}
+.advisor-mock header .client-menu-overlay .client-menu-container .client-menu .client-menu-item.login-actions.login {
+  margin-left: 80px;
+}
+.advisor-mock header .client-menu-overlay .client-menu-container .client-menu .client-menu-item.login-actions a,
+.advisor-mock header .client-menu-overlay .client-menu-container .client-menu .client-menu-item.login-actions span {
+  margin: 0 5px;
+  color: white;
+}
+.advisor-mock header .top-nav {
+  width: 1024px;
+  position: absolute;
+  top: 50px;
+  right: 50%;
+  margin-right: -512px;
+  padding-right: 55px;
+  text-align: right;
+}
+.advisor-mock header .top-nav a {
+  display: inline-block;
+  line-height: 64px;
+  color: #0f89e2;
+  font-size: 16px;
+  text-decoration: none;
+  margin: 0 0 0 26px;
+}
+.advisor-mock header .top-nav .btn {
+  padding: 0 44px;
+  line-height: 48px;
+  border: 1px solid rgba(14, 137, 226, 0.3);
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
+}
+.advisor-mock header.home {
+  height: auto;
+  width: 100%;
+}
+.advisor-mock header.home img.overlay {
+  width: 100%;
+}
+.advisor-mock header.login {
+  height: 374px;
+  min-width: 1150px;
+  background-image: url(../images/mocks/header.png);
+  background-size: cover !important;
+  background-repeat: no-repeat;
+  background-color: #ffffff;
+  background-position: center top;
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
+  .advisor-mock header.login {
+    background-image: url(../images/mocks/header@2x.png);
+    background-size: 1300px 374px;
+  }
+}
+.advisor-mock header.dashboard {
+  height: 374px;
+  min-width: 1150px;
+  background-image: url(../images/mocks/header.png);
+  background-size: cover !important;
+  background-repeat: no-repeat;
+  background-color: #ffffff;
+  background-position: center top;
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
+  .advisor-mock header.dashboard {
+    background-image: url(../images/mocks/header@2x.png);
+    background-size: 1300px 374px;
+  }
+}
+.advisor-mock header.meeting {
+  height: 374px;
+  min-width: 1150px;
+  background-image: url(../images/mocks/header-meeting.png);
+  background-size: cover !important;
+  background-repeat: no-repeat;
+  background-color: #ffffff;
+  background-position: center top;
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
+  .advisor-mock header.meeting {
+    background-image: url(../images/mocks/header-meeting@2x.png);
+    background-size: 1300px 374px;
+  }
+}
+.advisor-mock .navbar {
+  position: relative;
+  width: 1024;
+  height: auto;
+  margin: 0 auto;
+  height: 52px;
+  width: auto;
+  margin: 10px 0 0;
+  min-width: 1024px;
+  background-image: url('../images/mocks/menu-bar.jpg');
+  background-size: 1024px 52px;
+  background-repeat: repeat;
+  background-color: #ffffff;
+  background-position: center top;
+  background-position: center center;
+}
+.advisor-mock nav {
+  position: relative;
+  width: 1024px;
+  height: auto;
+  margin: 0 auto;
+  height: 53px;
+  width: auto;
+  min-width: 1024px;
+  background-image: url(../images/mocks/advisor-menu.jpg);
+  background-repeat: no-repeat;
+  background-repeat: repeat;
+  background-color: #ffffff;
+  background-position: center center;
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
+  .advisor-mock nav {
+    background-image: url(../images/mocks/advisor-menu@2x.jpg);
+    background-size: 1400px 53px;
+  }
+}
+.advisor-mock nav.meeting {
+  background-image: url(../images/mocks/advisor-menu-meeting.jpg);
+  background-repeat: repeat;
+  background-position: center center;
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
+  .advisor-mock nav.meeting {
+    background-image: url(../images/mocks/advisor-menu-meeting@2x.jpg);
+    background-size: 1400px 53px;
+  }
+}
+.advisor-mock .advisor-homepage {
+  position: relative;
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  top: -2px;
+}
+.advisor-mock .advisor-homepage img {
+  width: 100%;
+  height: auto;
+}
+.advisor-mock .advisor-sign-in {
+  margin-top: 40px;
+  position: relative;
+  width: 922px;
+  height: auto;
+  margin: 0 auto;
+  height: 560px;
+  background-image: url(../images/mocks/advisor-sign-in.png);
+  background-size: 922px 414px;
+  background-repeat: no-repeat;
+  background-color: #ffffff;
+  background-position: center center;
+  background-position: center top;
+  background-position-y: 100px;
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
+  .advisor-mock .advisor-sign-in {
+    background-image: url(../images/mocks/advisor-sign-in@2x.png);
+    background-size: 922px 414px;
+  }
+}
+.advisor-mock .advisor-sign-in .form-sign-in {
+  position: absolute;
+  top: 221px;
+  left: 50%;
+  padding: 5px;
+  margin-left: -441px;
+  width: 405px;
+  height: 250px;
+  background: #ffffff;
+}
+.advisor-mock .advisor-sign-in .form-sign-in input {
+  box-sizing: border-box;
+  width: 100%;
+  height: 45px;
+  padding: 0 10px;
+  border: 1px solid #dddddd;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  margin-top: 24px;
+  font-size: 14px;
+}
+.advisor-mock .advisor-sign-in .form-sign-in .forgot-link {
+  display: block;
+  text-align: right;
+  line-height: 1;
+  color: #0f89e2;
+  font-size: 16px;
+  text-decoration: none;
+  margin: 0;
+  margin: 12px 0 0;
+  font-size: 14px;
+}
+.advisor-mock .advisor-sign-in .form-sign-in .btn-signin {
+  width: 220px;
+  height: 45px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 14px;
+  text-transform: uppercase;
+  text-shadow: 0px 1px 1px rgba(68, 68, 68, 0.2);
+  background-color: #eaa430;
+  background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #ecae47), color-stop(1, #e89a19));
+  background: -ms-linear-gradient(bottom, #ecae47, #e89a19);
+  background: -moz-linear-gradient(center bottom, #ecae47 0%, #e89a19 100%);
+  background: -o-linear-gradient(#e89a19, #ecae47);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#e89a19', endColorstr='#ecae47', GradientType=0);
+}
+.advisor-mock .advisor-sign-in .form-sign-in .btn-signin:hover {
+  background: #eaa430;
+}
+.advisor-mock .advisor-dashboard {
+  position: relative;
+  width: 1024px;
+  height: auto;
+  margin: 0 auto;
+  height: 685px;
+  background-repeat: no-repeat;
+  background-color: #ffffff;
+  background-position: center center;
+  background-position: center top;
+}
+.advisor-mock .advisor-dashboard .appointment-list-header {
+  position: absolute;
+  right: 0;
+  left: 0;
+  width: 922px;
+  margin: 40px auto 0px;
+  color: #eaa430;
+  font-size: 28px;
+  font-weight: 300;
+}
+.advisor-mock .advisor-dashboard .appointment-list {
+  position: absolute;
+  top: 100px;
+  left: 50px;
+  width: 920px;
+  background: #FAFAFA;
+  border: 1px solid #dddddd;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  overflow: hidden;
+}
+.advisor-mock .advisor-dashboard .appointment-list .scroll-wrap {
+  width: 100%;
+  max-height: 515px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  overflow: hidden;
+  overflow-y: scroll;
+}
+.advisor-mock .advisor-dashboard .appointment-list .scroll-wrap table {
+  font-weight: normal;
+  width: 100%;
+  border: none;
+  outline: none;
+  margin: 0;
+  padding: 0;
+}
+.advisor-mock .advisor-dashboard .appointment-list .scroll-wrap table tr {
+  border: 1px solid #fff;
+  outline: none;
+  margin: 0;
+  padding: 0;
+  border-bottom: 1px solid #e3e3e3;
+}
+.advisor-mock .advisor-dashboard .appointment-list .scroll-wrap table tr.active:hover td {
+  background: rgba(32, 144, 217, 0.15);
+  border: 1px solid #2090d9;
+  position: relative;
+}
+.advisor-mock .advisor-dashboard .appointment-list .scroll-wrap table tr.active:hover td .appointment-link {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+.advisor-mock .advisor-dashboard .appointment-list .scroll-wrap table tr td {
+  border: none;
+  outline: none;
+  margin: 0;
+  padding: 0;
+  height: 80px;
+  vertical-align: middle;
+  padding: 0 20px;
+  background: #fafafa;
+}
+.advisor-mock .advisor-dashboard .appointment-list .scroll-wrap table tr td:first-child {
+  border-right: 1px solid #e3e3e3;
+}
+.advisor-mock .advisor-dashboard .appointment-list .scroll-wrap table tr td span {
+  color: #828282;
+  display: block;
+  line-height: 1.4;
+}
+.advisor-mock .advisor-dashboard .appointment-list .scroll-wrap table tr td span.main {
+  color: #494949;
+}
+.advisor-mock .advisor-dashboard .appointment-list .scroll-wrap table tr td .float {
+  float: left;
+}
+.advisor-mock .advisor-dashboard .appointment-list .scroll-wrap table tr td .actions {
+  position: relative;
+  top: 0;
+  right: 0;
+  float: right;
+}
+.advisor-mock .advisor-dashboard .appointment-list .scroll-wrap table tr td .actions.text span,
+.advisor-mock .advisor-dashboard .appointment-list .scroll-wrap table tr td .actions.text a {
+  padding: 15px 0;
+  display: inline-block;
+  color: #333333;
+  font-size: 14px;
+  text-decoration: none;
+  margin: 0 2px;
+}
+.advisor-mock .advisor-dashboard .appointment-list .scroll-wrap table tr td .actions.text span.green,
+.advisor-mock .advisor-dashboard .appointment-list .scroll-wrap table tr td .actions.text a.green {
+  color: #5c9b13;
+}
+.advisor-mock .advisor-dashboard .appointment-list .scroll-wrap table tr td .actions.text span.blue,
+.advisor-mock .advisor-dashboard .appointment-list .scroll-wrap table tr td .actions.text a.blue {
+  color: #2d9fe7;
+}
+.advisor-mock .advisor-dashboard .appointment-list .scroll-wrap table tr td .actions.btn {
+  padding-top: 3px;
+}
+.advisor-mock .advisor-dashboard .appointment-list .scroll-wrap table tr td .actions.btn a {
+  display: inline-block;
+  padding: 0 30px;
+  line-height: 38px;
+  border: 1px solid #259de8;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  text-decoration: none;
+}
+.advisor-mock .advisor-dashboard .appointment-list .scroll-wrap table tr td .actions.btn a.green {
+  color: white;
+  background: #88b15e;
+  border-color: #6e9448;
+}
+.advisor-mock .advisor-dashboard .appointment-list .scroll-wrap table tr td .actions.btn a.green:hover {
+  background: #a1c280;
+  color: #fff;
+}
+.advisor-mock .advisor-dashboard .appointment-list .scroll-wrap table tr td .actions.btn a.orange {
+  color: white;
+  background: #e8a33e;
+  border-color: #d98b1a;
+}
+.advisor-mock .advisor-dashboard .appointment-list .scroll-wrap table tr td .actions.btn a.orange:hover {
+  background: #edb96c;
+  color: #fff;
+}
+.advisor-mock .advisor-dashboard .appointment-list .scroll-wrap table tr:nth-child(odd) td {
+  background: #fff;
+}
+.advisor-mock .advisor-meeting {
+  position: relative;
+  width: 1024px;
+  height: auto;
+  margin: 0 auto;
+  min-height: 854px;
+  box-sizing: border-box;
+  background-color: #ffffff;
+}
+.advisor-mock .advisor-meeting .content-container {
+  margin-top: 90px;
+  padding: 0 10px;
+  -ms-box-orient: horizontal;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+}
+.advisor-mock .advisor-meeting .content-container .content-left {
+  width: 600px;
+}
+.advisor-mock .advisor-meeting .content-container .content-left h1 {
+  font-family: 'Helvetica Neue', helvetica, arial, sans-serif;
+  font-size: 28px;
+  font-weight: 200;
+  color: #e8a33e;
+}
+.advisor-mock .advisor-meeting .content-container .content-left h1 .client-name {
+  color: #000;
+}
+.advisor-mock .advisor-meeting .content-container .content-left p {
+  margin-top: 10px;
+  font-size: 13px;
+  color: #58646e;
+}
+.advisor-mock .advisor-meeting .content-container .content-left .investment-data-container {
+  height: 600px;
+  margin-top: 40px;
+}
+.advisor-mock .advisor-meeting .content-container .content-left .investment-data-container .investment-data-nav {
+  list-style: none;
+  -ms-box-orient: horizontal;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: flex;
+  height: 40px;
+  position: relative;
+  top: 1px;
+}
+.advisor-mock .advisor-meeting .content-container .content-left .investment-data-container .investment-data-nav .nav-tab {
+  width: 135px;
+  margin-right: 1px;
+  line-height: 40px;
+  border: 1px solid #7c7c7c;
+  border-radius: 5px 5px 0 0;
+  text-align: center;
+  font-size: 12px;
+  font-weight: 200;
+  background-color: #f2f2f2;
+  cursor: pointer;
+}
+.advisor-mock .advisor-meeting .content-container .content-left .investment-data-container .investment-data-nav .nav-tab.active {
+  background-color: #fff;
+  border-bottom: 1px solid #fff;
+  cursor: default;
+}
+.advisor-mock .advisor-meeting .content-container .content-left .investment-data-container .investment-data-content {
+  height: 615px;
+  border: 1px solid #7c7c7c;
+}
+.advisor-mock .advisor-meeting .content-container .content-left .investment-data-container .investment-data-content .investment-tab {
+  -ms-box-orient: horizontal;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  align-items: center;
+  display: none;
+  height: 100%;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.advisor-mock .advisor-meeting .content-container .content-left .investment-data-container .investment-data-content .investment-tab.tab-0 {
+  background-image: url(../images/mocks/tab-0.png);
+  background-repeat: no-repeat;
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
+  .advisor-mock .advisor-meeting .content-container .content-left .investment-data-container .investment-data-content .investment-tab.tab-0 {
+    background-image: url(../images/mocks/tab-0@2x.png);
+    background-size: 100% 100%;
+  }
+}
+.advisor-mock .advisor-meeting .content-container .content-left .investment-data-container .investment-data-content .investment-tab.tab-1 {
+  background-image: url('../images/mocks/tab-1.png');
+}
+.advisor-mock .advisor-meeting .content-container .content-left .investment-data-container .investment-data-content .investment-tab.tab-2 {
+  background-image: url('../images/mocks/tab-2.png');
+}
+.advisor-mock .advisor-meeting .content-container .content-left .investment-data-container .investment-data-content .investment-tab.tab-3 {
+  background-image: url('../images/mocks/tab-3.png');
+}
+.advisor-mock .advisor-meeting .content-container .content-left .investment-data-container .investment-data-content .investment-tab.active {
+  display: block;
+}
+.advisor-mock .advisor-meeting .content-container .content-right .score-holder {
+  height: 110px;
+  text-align: center;
+  font-size: 44px;
+  color: #eaa430;
+}
+.advisor-mock .advisor-meeting .content-container .content-right .score-holder .label {
+  font-size: 11px;
+  display: block;
+  color: #616161;
+  margin-top: 10px;
+}
+.advisor-mock .advisor-meeting .content-container .content-right .widget-holder {
+  width: 350px;
+  height: auto;
+  padding-bottom: 40px;
+}
+.advisor-mock .advisor-meeting .content-container .content-right .widget-holder .ths-feed-wrap .ths-fullscreen {
+  top: 0 !important;
+  left: 0 !important;
+  height: 100% !important;
+  width: 100% !important;
+}
+.advisor-mock .ths-messages-holder {
+  height: 215px !important;
+}
+.advisor-mock footer {
+  height: 348px;
+  min-width: 1024px;
+  margin: 0;
+  background-image: url(../images/mocks/doctor-footer.png);
+  background-repeat: no-repeat;
+  background-color: #5C5C5C;
+  background-position: center top;
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
+  .advisor-mock footer {
+    background-image: url(../images/mocks/doctor-footer@2x.png);
+    background-size: 1300px 348px;
+  }
+}
+html,
+body {
+  font-family: 'Helvetica Neue', helvetica, arial, sans-serif;
+  font-weight: 300;
+}
+.test {
+  z-index: 100000;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  margin-left: -460px;
+  width: 920px;
+  height: 100%;
+  border: 1px solid red;
+}
+.client-mock a {
+  color: #52acbd;
+  text-decoration: none;
+}
+.client-mock a:hover {
+  text-decoration: underline;
+}
+.client-mock .btn-rounded {
+  display: inline-block;
+  min-width: 170px;
+  padding: 0 30px;
+  color: #fff;
+  line-height: 34px;
+  text-align: center;
+  background-color: transparent;
+  border: 1px solid #fff;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+.client-mock .btn-rounded:hover {
+  text-decoration: none;
+  border-color: #52acbd;
+  background: #00a7b4;
+}
+.client-mock .btn-rounded.active {
+  background: #00a7b4;
+  border-color: #00a7b4;
+}
+.client-mock header {
+  min-width: 1150px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: white;
+  background-position: center top;
+}
+.client-mock header .client-menu-overlay {
+  background: rgba(0, 0, 0, 0.5);
+  height: 91.5px;
+  width: 100%;
+  position: absolute;
+  top: 0;
+}
+.client-mock header .client-menu-overlay .client-menu-container {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  -ms-box-orient: horizontal;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+}
+.client-mock header .client-menu-overlay .client-menu-container.no-padding {
+  padding: 0;
+}
+.client-mock header .client-menu-overlay .client-menu-container .client-menu-logo-container {
+  margin-left: 20px;
+  height: 100%;
+  color: white;
+  width: 300px;
+  -ms-box-orient: horizontal;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: flex;
+}
+.client-mock header .client-menu-overlay .client-menu-container .client-menu-logo-container .logo-text {
+  -ms-box-orient: horizontal;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: column;
+  -webkit-justify-content: space-around;
+  justify-content: space-around;
+  -webkit-align-items: center;
+  align-items: center;
+  padding: 20px 0;
+}
+.client-mock header .client-menu-overlay .client-menu-container .client-menu-logo-container .logo-text .logo-text-large {
+  font-size: 32px;
+  text-align: center;
+}
+.client-mock header .client-menu-overlay .client-menu-container .client-menu-logo-container .logo-text .logo-text-small {
+  font-size: 14px;
+  letter-spacing: 5px;
+  margin-right: -6px;
+}
+.client-mock header .client-menu-overlay .client-menu-container .client-menu-logo-container .logo-image {
+  background-image: url('../images/mocks/logo.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100%;
+  height: 100%;
+}
+.client-mock header .client-menu-overlay .client-menu-container .client-menu {
+  height: 100%;
+  color: white;
+}
+.client-mock header .client-menu-overlay .client-menu-container .client-menu .client-menu-item {
+  position: relative;
+  display: inline-block;
+  font-size: 13px;
+  cursor: pointer;
+  height: 91.5px;
+  line-height: 91.5px;
+  text-transform: uppercase;
+  padding: 0 30px 0 15px;
+}
+.client-mock header .client-menu-overlay .client-menu-container .client-menu .client-menu-item:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+.client-mock header .client-menu-overlay .client-menu-container .client-menu .client-menu-item.expand::after {
+  content: '';
+  background-image: url(../images/mocks/rectangle-138-white.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+  top: 43px;
+  right: 10px;
+  height: 12px;
+  width: 12px;
+  margin-left: 10px;
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
+  .client-mock header .client-menu-overlay .client-menu-container .client-menu .client-menu-item.expand::after {
+    background-image: url(../images/mocks/rectangle-138-white@2x.png);
+    background-size: '' '';
+  }
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 3), only screen and (min--moz-device-pixel-ratio: 3), only screen and (min-device-pixel-ratio: 3) {
+  .client-mock header .client-menu-overlay .client-menu-container .client-menu .client-menu-item.expand::after {
+    background-image: url(../images/mocks/rectangle-138-white@3x.png);
+    background-size: '' '';
+  }
+}
+.client-mock header .client-menu-overlay .client-menu-container .client-menu .client-menu-item .investing-menu {
+  display: none;
+  width: 100%;
+  position: absolute;
+  list-style: none;
+  top: 65.5px;
+  left: 0px;
+  background: #f2f2f2;
+  color: #343c3e;
+}
+.client-mock header .client-menu-overlay .client-menu-container .client-menu .client-menu-item .investing-menu .investing-menu-item {
+  position: relative;
+  height: 45px;
+  line-height: 45px;
+  padding-left: 20px;
+  box-sizing: border-box;
+  border-top: 1px solid transparent;
+  border-bottom: 1px solid transparent;
+}
+.client-mock header .client-menu-overlay .client-menu-container .client-menu .client-menu-item .investing-menu .investing-menu-item:hover {
+  color: #52acbd;
+  background: white;
+  border-color: #f2f2f2;
+}
+.client-mock header .client-menu-overlay .client-menu-container .client-menu .client-menu-item .investing-menu .investing-menu-item .right-arrow {
+  position: absolute;
+  font-size: 30px;
+  margin-left: 15px;
+  top: -2px;
+}
+.client-mock header .client-menu-overlay .client-menu-container .client-menu .client-menu-item .investing-menu .investing-menu-item a {
+  text-decoration: none;
+  color: inherit;
+}
+.client-mock header .client-menu-overlay .client-menu-container .client-menu .client-menu-item.login-actions {
+  color: white;
+  padding: 0;
+  background-color: #00a7b4;
+  max-width: 200px;
+  min-width: 150px;
+}
+.client-mock header .client-menu-overlay .client-menu-container .client-menu .client-menu-item.login-actions span {
+  margin: 0 5px;
+}
+.client-mock header .client-menu-overlay .client-menu-container .client-menu .client-menu-item.login-actions .client-status {
+  display: none;
+  color: white;
+}
+.client-mock header .client-menu-overlay .client-menu-container .client-menu .client-menu-item.login-actions .client-status span {
+  line-height: 20px;
+}
+.client-mock header .client-menu-overlay .client-menu-container .client-menu .client-menu-item.login-actions .client-status span:first-child {
+  display: block;
+  line-height: 20px;
+}
+.client-mock header .client-menu-overlay .client-menu-container .client-menu .client-menu-item.login-actions .client-status div.container {
+  display: inline-flex;
+  flex-direction: column;
+  position: relative;
+  top: -10px;
+  padding: 0 30px 0 15px;
+}
+.client-mock header .client-menu-overlay .client-menu-container .client-menu .client-menu-item.login-actions .client-status.hidden {
+  display: none;
+}
+.client-mock header .client-menu-overlay .client-menu-container .client-menu .client-menu-item.login-actions .client-status .client-name {
+  font-weight: 600;
+}
+.client-mock header .client-menu-overlay .client-menu-container .client-menu .client-menu-item.login-actions .client-status .display-client-dropdown {
+  display: inline-block;
+  height: 14px;
+  width: 14px;
+  background-image: url(../images/mocks/rectangle-138-white.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: relative;
+  top: 7px;
+  left: 7px;
+  cursor: pointer;
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
+  .client-mock header .client-menu-overlay .client-menu-container .client-menu .client-menu-item.login-actions .client-status .display-client-dropdown {
+    background-image: url(../images/mocks/rectangle-138-white@2x.png);
+    background-size: '' '';
+  }
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 3), only screen and (min--moz-device-pixel-ratio: 3), only screen and (min-device-pixel-ratio: 3) {
+  .client-mock header .client-menu-overlay .client-menu-container .client-menu .client-menu-item.login-actions .client-status .display-client-dropdown {
+    background-image: url(../images/mocks/rectangle-138-white@3x.png);
+    background-size: '' '';
+  }
+}
+.client-mock header .client-menu-overlay .client-menu-container .client-menu .client-menu-item.login-actions .client-status .client-dropdown {
+  display: none;
+  background-color: #ffffff;
+  color: #4AA3AF;
+  position: absolute;
+  top: 10px;
+  right: 0;
+  padding: 3px 20px;
+  border-radius: 5px;
+  z-index: 10;
+}
+.client-mock header .client-menu-overlay .client-menu-container .client-menu .client-menu-item.login-actions .client-status .investing-menu-item span {
+  line-height: 45px;
+}
+.client-mock header .client-settings-nav {
+  position: relative;
+  width: 1150px;
+  height: auto;
+  text-align: right;
+  margin: 0 auto 0;
+  padding: 8px 102px 0 0;
+  box-sizing: border-box;
+}
+.client-mock header .client-settings-nav .login-dropdown {
+  display: none;
+  position: absolute;
+  top: 60px;
+  right: 55px;
+  width: 300px;
+  background: #fff;
+  text-align: left;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  -webkit-box-shadow: 0 1px 14px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0 1px 14px rgba(0, 0, 0, 0.75);
+  box-shadow: 0 1px 14px rgba(0, 0, 0, 0.75);
+}
+.client-mock header .client-settings-nav .login-dropdown:before {
+  content: "";
+  position: absolute;
+  top: -20px;
+  right: 40px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 20px 20px 20px;
+  border-color: transparent transparent #ffffff transparent;
+}
+.client-mock header .client-settings-nav .login-dropdown .title {
+  text-align: center;
+  display: block;
+  margin: 30px 0 0;
+  font-size: 24px;
+  color: #2c2c2c;
+  font-weight: normal;
+}
+.client-mock header .client-settings-nav .login-dropdown .body {
+  padding: 30px 40px 20px;
+}
+.client-mock header .client-settings-nav .login-dropdown .body input[type="text"],
+.client-mock header .client-settings-nav .login-dropdown .body input[type="password"] {
+  box-sizing: border-box;
+  width: 100%;
+  height: 45px;
+  padding: 0 10px;
+  border: 1px solid #d8d8d8;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  margin-bottom: 15px;
+  font-size: 14px;
+}
+.client-mock header .client-settings-nav .login-dropdown .body .remember-me {
+  position: relative;
+  display: block;
+  font-size: 14px;
+  font-weight: normal;
+  color: #626262;
+  padding-left: 26px;
+  margin: 10px 0 25px;
+}
+.client-mock header .client-settings-nav .login-dropdown .body .remember-me:before {
+  position: absolute;
+  content: "";
+  top: -3px;
+  left: 0;
+  width: 18px;
+  height: 18px;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  border: 1px solid #d8d8d8;
+}
+.client-mock header .client-settings-nav .login-dropdown .body .submit {
+  width: 220px;
+  height: 34px;
+  margin: 0 auto;
+  -webkit-border-radius: 17px;
+  -moz-border-radius: 17px;
+  border-radius: 17px;
+  border: 1px solid #cecece;
+  color: #cecece;
+  font-size: 14px;
+  cursor: pointer;
+}
+.client-mock header .client-settings-nav .login-dropdown .footer {
+  height: 52px;
+  background: #f8f8f8;
+  border-top: 1px solid #eeeeee;
+  -webkit-border-top-right-radius: 0;
+  -webkit-border-bottom-right-radius: 3px;
+  -webkit-border-bottom-left-radius: 3px;
+  -webkit-border-top-left-radius: 0;
+  -moz-border-radius-topright: 0;
+  -moz-border-radius-bottomright: 3px;
+  -moz-border-radius-bottomleft: 3px;
+  -moz-border-radius-topleft: 0;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+  border-top-left-radius: 0;
+  -moz-background-clip: padding-box;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  box-sizing: border-box;
+}
+.client-mock header .client-settings-nav .login-dropdown .footer a {
+  box-sizing: border-box;
+  display: block;
+  float: left;
+  width: 50%;
+  border-right: 1px solid #eeeeee;
+  text-align: center;
+  color: #626262;
+  line-height: 52px;
+  font-weight: normal;
+  font-size: 14px;
+}
+.client-mock header .client-settings-nav .login-dropdown .footer a:last-child {
+  border: none;
+}
+.client-mock header .client-settings-nav a {
+  font-size: 12px;
+}
+.client-mock header.home {
+  height: 746px;
+  padding-top: 14px;
+  background-image: url(../images/mocks/client-hero.jpg);
+  background-repeat: no-repeat;
+  background-size: cover !important;
+  min-width: 1150px;
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
+  .client-mock header.home {
+    background-image: url(../images/mocks/client-hero@2x.jpg);
+    background-size: 1300px 760px;
+  }
+}
+.client-mock header.home .client-status-container {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  left: 0px;
+  width: 100%;
+  margin: 0 auto;
+}
+.client-mock header.home .client-status-container .client-home-modal {
+  display: none;
+  position: absolute;
+  right: 65px;
+  top: 75px;
+  width: 250px;
+  background: white;
+  text-align: center;
+  padding: 20px 20px 40px 20px;
+  border-radius: 3px;
+  z-index: 5;
+}
+.client-mock header.home .client-status-container .client-home-modal.login {
+  right: 75px;
+}
+.client-mock header.home .client-status-container .client-home-modal.register {
+  right: 10px;
+}
+.client-mock header.home .client-status-container .client-home-modal:before {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-bottom: 15px solid white;
+  top: -15px;
+  right: 35px;
+}
+.client-mock header.home .client-status-container .client-home-modal h2 {
+  font-family: 'Helvetica Neue', helvetica, arial, sans-serif;
+  margin: 10px 0;
+}
+.client-mock header.home .client-status-container .client-home-modal .client-modal-close {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  cursor: pointer;
+}
+.client-mock header.home .client-status-container .client-home-modal .login-input-container {
+  padding: 10px 0;
+}
+.client-mock header.home .client-status-container .client-home-modal .login-input-container .login-input {
+  width: 90%;
+  height: 40px;
+  margin: 5px 0;
+  padding: 0 10px;
+  font-size: 12px;
+  color: #b3b3b3;
+  border: 1px solid #b3b3b3;
+  border-radius: 3px;
+  box-sizing: border-box;
+}
+.client-mock header.home .client-status-container .client-home-modal .login-error-container {
+  height: 14px;
+  margin: 5px 0;
+}
+.client-mock header.home .client-status-container .client-home-modal .login-error-container .login-error {
+  color: lightcoral;
+  font-size: 12px;
+  font-weight: 500;
+}
+.client-mock header.home .client-status-container .client-home-modal .login-submit {
+  width: 90%;
+  height: 30px;
+  margin: 10px;
+  font-size: 14px;
+  border-radius: 30px;
+  background: #00a7b4;
+  color: white;
+  border: 0;
+  cursor: pointer;
+}
+.client-mock header.home .client-status-container .client-home-modal .login-submit:hover {
+  background: #00484e;
+  color: white;
+}
+.client-mock header.home .client-status-container .client-home-modal .login-label {
+  color: #b3b3b3;
+  font-size: 14px;
+  margin-right: 5px;
+}
+.client-mock header.home .client-status-container .client-home-modal .login-options {
+  position: absolute;
+  background: #f2f2f2;
+  border-top: 1px solid #b3b3b3;
+  height: 40px;
+  width: 290px;
+  left: 0;
+  border-radius: 0 0 3px 3px;
+}
+.client-mock header.home .client-status-container .client-home-modal .login-options .option {
+  color: #7c7c7c;
+  line-height: 40px;
+  font-size: 14px;
+  font-weight: 500;
+  display: inline-block;
+  width: 45%;
+}
+.client-mock header.home .client-status-container .client-home-modal .login-options .option:first-child {
+  border-right: 1px solid #b3b3b3;
+}
+.client-mock header.home .inner {
+  height: 410px;
+  min-width: 1150px;
+  margin: 0;
+  margin-top: 15px;
+}
+.client-mock header.home .client-menu-overlay {
+  background: rgba(0, 0, 0, 0.5);
+  top: 5px;
+}
+.client-mock header.appointment,
+.client-mock header.meeting {
+  min-height: 197px;
+  background-image: url(../images/mocks/appointment-hero.jpg);
+  background-repeat: no-repeat;
+  background-size: 100% 197px;
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
+  .client-mock header.appointment,
+  .client-mock header.meeting {
+    background-image: url(../images/mocks/appointment-hero@2x.jpg);
+    background-size: 100% 197px;
+  }
+}
+.client-mock header.appointment .inner,
+.client-mock header.meeting .inner {
+  min-height: 504px;
+  min-width: 1150px;
+  margin: 0 auto;
+  padding: 1px 0;
+  background-repeat: no-repeat;
+  background-position: center top;
+}
+.client-mock header.appointment.calendar .inner .client-menu-overlay .client-menu-container .client-menu .login-actions .client-status div.container,
+.client-mock header.meeting.calendar .inner .client-menu-overlay .client-menu-container .client-menu .login-actions .client-status div.container {
+  top: -24px;
+}
+.client-mock header.appointment .appointment-center,
+.client-mock header.meeting .appointment-center {
+  position: relative;
+  width: 1130px;
+  min-height: 450px;
+  margin: 190px auto 0;
+  padding-left: 360px;
+  box-sizing: border-box;
+  padding-top: 25px;
+}
+.client-mock header.appointment .appointment-center .account-menu,
+.client-mock header.meeting .appointment-center .account-menu {
+  list-style: none;
+  position: absolute;
+  top: 20px;
+  left: 0;
+}
+.client-mock header.appointment .appointment-center .account-menu .account-menu-item,
+.client-mock header.meeting .appointment-center .account-menu .account-menu-item {
+  color: #616161;
+  font-size: 14px;
+  height: 55px;
+  width: 275px;
+  line-height: 55px;
+  border-bottom: 1px solid #dddddd;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+}
+.client-mock header.appointment .appointment-center .account-menu .account-menu-item.active,
+.client-mock header.meeting .appointment-center .account-menu .account-menu-item.active {
+  font-size: 24px;
+  color: #00a7b4;
+}
+.client-mock header.appointment .appointment-center .account-menu .account-menu-item.active a,
+.client-mock header.meeting .appointment-center .account-menu .account-menu-item.active a {
+  color: #00a7b4;
+}
+.client-mock header.appointment .appointment-center .account-menu .account-menu-item:hover,
+.client-mock header.meeting .appointment-center .account-menu .account-menu-item:hover {
+  font-size: 23px;
+  cursor: pointer;
+}
+.client-mock header.appointment .appointment-center .account-menu .account-menu-item a,
+.client-mock header.meeting .appointment-center .account-menu .account-menu-item a {
+  color: #616161;
+  text-decoration: none;
+}
+.client-mock header.appointment .appointment-center a.appointment-anchor,
+.client-mock header.meeting .appointment-center a.appointment-anchor {
+  position: absolute;
+  height: 44px;
+  width: 225px;
+  top: 230px;
+  left: 0;
+  cursor: pointer;
+}
+.client-mock header.appointment .appointment-center .header,
+.client-mock header.meeting .appointment-center .header {
+  border-bottom: 1px solid #dddddd;
+  color: #616161;
+  height: 58px;
+  margin-bottom: 0;
+}
+.client-mock header.appointment .appointment-center .header > span,
+.client-mock header.meeting .appointment-center .header > span {
+  display: block;
+  font-size: 36px;
+  line-height: 58px;
+  float: left;
+}
+.client-mock header.appointment .appointment-center .header .actions,
+.client-mock header.meeting .appointment-center .header .actions {
+  float: right;
+}
+.client-mock header.appointment .appointment-center .header .actions > span,
+.client-mock header.meeting .appointment-center .header .actions > span,
+.client-mock header.appointment .appointment-center .header .actions > a,
+.client-mock header.meeting .appointment-center .header .actions > a {
+  display: inline-block;
+  line-height: 58px;
+  margin-left: 4px;
+}
+.client-mock header.appointment .appointment-center .body,
+.client-mock header.meeting .appointment-center .body {
+  color: #616161;
+}
+.client-mock header.appointment .appointment-center .body > p,
+.client-mock header.meeting .appointment-center .body > p {
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+.client-mock header.appointment .appointment-center .body > p strong,
+.client-mock header.meeting .appointment-center .body > p strong {
+  font-weight: 400;
+  font-size: 20px;
+}
+.client-mock header.appointment .appointment-center .body > p:first-child,
+.client-mock header.meeting .appointment-center .body > p:first-child {
+  margin-top: 25px;
+}
+.client-mock header.appointment .appointment-center .body .box-wrap,
+.client-mock header.meeting .appointment-center .body .box-wrap {
+  display: inline-block;
+  padding: 20px 35px;
+  background: rgba(0, 0, 0, 0.25);
+  color: #fff;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  margin-top: 25px;
+}
+.client-mock header.appointment .appointment-center .body .box-wrap.create h4,
+.client-mock header.meeting .appointment-center .body .box-wrap.create h4 {
+  font-size: 30px;
+  font-weight: normal;
+  margin-bottom: 20px;
+}
+.client-mock header.appointment .appointment-center .body .box-wrap.create p,
+.client-mock header.meeting .appointment-center .body .box-wrap.create p {
+  margin-bottom: 20px;
+}
+.client-mock header.appointment .appointment-center .body .box-wrap.create .btn-rounded,
+.client-mock header.meeting .appointment-center .body .box-wrap.create .btn-rounded {
+  background-color: rgba(0, 0, 0, 0.3);
+  margin-right: 40px;
+}
+.client-mock header.appointment .appointment-center .body .box-wrap.create .btn-rounded:last-child,
+.client-mock header.meeting .appointment-center .body .box-wrap.create .btn-rounded:last-child {
+  margin: 0;
+}
+.client-mock header.appointment .appointment-center .body .box-wrap.list,
+.client-mock header.meeting .appointment-center .body .box-wrap.list {
+  position: relative;
+  padding: 35px;
+  width: 100%;
+  box-sizing: border-box;
+  max-height: 300px;
+  overflow-y: scroll;
+}
+.client-mock header.appointment .appointment-center .body .box-wrap.list p strong,
+.client-mock header.meeting .appointment-center .body .box-wrap.list p strong {
+  font-size: 22px;
+}
+.client-mock header.appointment .appointment-center .body .box-wrap.list p em,
+.client-mock header.meeting .appointment-center .body .box-wrap.list p em {
+  display: inline-block;
+  margin: 0 4px;
+}
+.client-mock header.appointment .appointment-center .body .box-wrap.list p:first-child,
+.client-mock header.meeting .appointment-center .body .box-wrap.list p:first-child {
+  margin-bottom: 15px;
+}
+.client-mock header.appointment .appointment-center .body .box-wrap.list .no-appointments,
+.client-mock header.meeting .appointment-center .body .box-wrap.list .no-appointments {
+  display: none;
+}
+.client-mock header.appointment .appointment-center .body .box-wrap.list .appointment-list,
+.client-mock header.meeting .appointment-center .body .box-wrap.list .appointment-list {
+  list-style: none;
+}
+.client-mock header.appointment .appointment-center .body .box-wrap.list .appointment-list .appointment-list-item,
+.client-mock header.meeting .appointment-center .body .box-wrap.list .appointment-list .appointment-list-item {
+  position: relative;
+  padding: 15px 10px 10px;
+  margin-bottom: 10px;
+  border-top: 1px solid #ffffff;
+}
+.client-mock header.appointment .appointment-center .body .box-wrap.list .actions,
+.client-mock header.meeting .appointment-center .body .box-wrap.list .actions {
+  position: absolute;
+  top: 28px;
+  right: 20px;
+}
+.client-mock header.appointment .appointment-center .body .box-wrap.list .actions a,
+.client-mock header.meeting .appointment-center .body .box-wrap.list .actions a {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+}
+.client-mock header.appointment .appointment-center .body .box-wrap.list .actions .icon-edit,
+.client-mock header.meeting .appointment-center .body .box-wrap.list .actions .icon-edit {
+  background-image: url(../images/mocks/edit.png);
+  background-repeat: no-repeat;
+  background-position: center center ;
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
+  .client-mock header.appointment .appointment-center .body .box-wrap.list .actions .icon-edit,
+  .client-mock header.meeting .appointment-center .body .box-wrap.list .actions .icon-edit {
+    background-image: url(../images/mocks/edit@2x.png);
+    background-size: 22px 17px;
+  }
+}
+.client-mock header.appointment .appointment-center .body .box-wrap.list .actions .icon-trash,
+.client-mock header.meeting .appointment-center .body .box-wrap.list .actions .icon-trash {
+  background-image: url(../images/mocks/trash.png);
+  background-repeat: no-repeat;
+  background-position: center center ;
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
+  .client-mock header.appointment .appointment-center .body .box-wrap.list .actions .icon-trash,
+  .client-mock header.meeting .appointment-center .body .box-wrap.list .actions .icon-trash {
+    background-image: url(../images/mocks/trash@2x.png);
+    background-size: 17px 19px;
+  }
+}
+.client-mock header.appointment .appointment-center .body .box-wrap.calendar,
+.client-mock header.meeting .appointment-center .body .box-wrap.calendar {
+  width: 528px;
+  min-height: 290px;
+  margin-bottom: 40px;
+  padding: 20px 15px 20px 30px;
+}
+.client-mock header.appointment .appointment-center .body .display-selected,
+.client-mock header.meeting .appointment-center .body .display-selected {
+  box-sizing: border-box;
+  float: right;
+  margin-top: 25px;
+  padding-top: 25px;
+  width: 170px;
+}
+.client-mock header.appointment .appointment-center .body .display-selected span,
+.client-mock header.meeting .appointment-center .body .display-selected span {
+  display: block;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+.client-mock header.appointment .appointment-center .body .display-selected span.cal-day,
+.client-mock header.meeting .appointment-center .body .display-selected span.cal-day {
+  font-size: 30px;
+}
+.client-mock header.appointment .appointment-center .body .display-selected span.cal-date,
+.client-mock header.meeting .appointment-center .body .display-selected span.cal-date {
+  font-size: 18px;
+  margin-top: 4px;
+}
+.client-mock header.appointment .appointment-center .body .display-selected span.cal-time,
+.client-mock header.meeting .appointment-center .body .display-selected span.cal-time {
+  font-size: 30px;
+  margin: 15px 0;
+}
+.client-mock header.appointment .appointment-center .body .display-selected span.cal-user,
+.client-mock header.meeting .appointment-center .body .display-selected span.cal-user {
+  display: block;
+  font-size: 20px;
+  margin: 0 0 30px;
+}
+.client-mock header.appointment .appointment-center .body .display-selected .btn-rounded,
+.client-mock header.meeting .appointment-center .body .display-selected .btn-rounded {
+  padding: 0;
+  margin-bottom: 15px;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+.client-mock header.appointment .appointment-center .body .display-selected .btn-rounded.active,
+.client-mock header.meeting .appointment-center .body .display-selected .btn-rounded.active {
+  background-color: #00a7b4;
+}
+.client-mock header.appointment .appointment-center .body .display-selected .btn-rounded.active:hover,
+.client-mock header.meeting .appointment-center .body .display-selected .btn-rounded.active:hover {
+  background-color: #007881;
+}
+.client-mock header.appointment .appointment-center .body .choose-type .item,
+.client-mock header.meeting .appointment-center .body .choose-type .item {
+  display: inline-block;
+  width: auto;
+  text-align: center;
+  box-sizing: border-box;
+  margin: 40px 60px 0 0;
+}
+.client-mock header.appointment .appointment-center .body .choose-type .item:first-child,
+.client-mock header.meeting .appointment-center .body .choose-type .item:first-child {
+  margin-right: 120px;
+}
+.client-mock header.appointment .appointment-center .body .choose-type .item img,
+.client-mock header.meeting .appointment-center .body .choose-type .item img {
+  display: block;
+  margin: 0 auto;
+}
+.client-mock header.appointment .appointment-center .body .choose-type .item p,
+.client-mock header.meeting .appointment-center .body .choose-type .item p {
+  display: block;
+  font-weight: 600;
+  font-size: 18px;
+  height: 40px;
+  margin: 25px 0 15px;
+}
+.client-mock header.appointment .appointment-center .body .choose-type .item .btn-rounded,
+.client-mock header.meeting .appointment-center .body .choose-type .item .btn-rounded {
+  min-width: 120px;
+  background-color: #00a7b4;
+  color: #ffffff;
+}
+.client-mock header.appointment .appointment-center .body .choose-type .item .btn-rounded:hover,
+.client-mock header.meeting .appointment-center .body .choose-type .item .btn-rounded:hover {
+  background-color: #007881;
+}
+.client-mock header.appointment .appointment-center .body.hollow-pie img,
+.client-mock header.meeting .appointment-center .body.hollow-pie img {
+  width: 100%;
+}
+.client-mock header.appointment .appointment-center .body.hollow-pie .client-name,
+.client-mock header.meeting .appointment-center .body.hollow-pie .client-name {
+  position: absolute;
+  top: 47px;
+  left: 552px;
+  font-size: 26px;
+}
+.client-mock header.appointment .appointment-center .body.hollow-pie .confirmation-actions,
+.client-mock header.meeting .appointment-center .body.hollow-pie .confirmation-actions {
+  margin-left: 195px;
+  font-size: 14px;
+}
+.client-mock header.appointment .appointment-center .body.hollow-pie .confirmation-actions .btn-rounded,
+.client-mock header.meeting .appointment-center .body.hollow-pie .confirmation-actions .btn-rounded {
+  padding: 0;
+  margin: 10px 0;
+  display: block;
+  width: 220px;
+  background-color: #00a7b4;
+}
+.client-mock header.appointment .appointment-center .body.hollow-pie .confirmation-actions .btn-rounded:hover,
+.client-mock header.meeting .appointment-center .body.hollow-pie .confirmation-actions .btn-rounded:hover {
+  background-color: #007881;
+}
+.client-mock header.meeting .body {
+  padding-left: 20px;
+}
+.client-mock header.meeting .body .widget-holder {
+  padding-top: 30px;
+  width: 100%;
+}
+.client-mock header.meeting .body .widget-holder > * {
+  width: 49%;
+}
+.client-mock header.meeting .body .widget-holder > div.ths-widget-wrapper {
+  position: relative;
+  display: inline-table;
+}
+.client-mock header.meeting .body .widget-holder > div.ths-widget-wrapper .ths-start-call .btn-start-call {
+  width: 168px;
+}
+.client-mock header.meeting .body .widget-holder > div.ths-widget-wrapper .ths-feed-wrap .ths-fullscreen {
+  top: 0 !important;
+  left: 0 !important;
+  height: 100% !important;
+  width: 100% !important;
+}
+.client-mock header.meeting .body .widget-holder section {
+  display: inline;
+  float: right;
+  margin-top: -20px;
+}
+.client-mock header.meeting .body .widget-holder section .ths-widget-wrapper .ths-widget-extras .ths-messages-holder {
+  height: 278px;
+}
+.client-mock header.meeting .body .appointment-summary {
+  display: none;
+}
+.client-mock header.meeting .body.chat-hidden {
+  padding-top: 30px;
+}
+.client-mock header.meeting .body.chat-hidden .widget-holder {
+  width: 50%;
+  display: inline;
+}
+.client-mock header.meeting .body.chat-hidden .appointment-summary {
+  position: absolute;
+  display: inline;
+  width: 367px;
+  float: right;
+}
+.client-mock header.meeting .body.chat-hidden .appointment-summary img {
+  width: 367px;
+}
+.client-mock header.meeting .body.chat-hidden .appointment-summary .client-name {
+  position: absolute;
+  top: 85px;
+  width: auto;
+  left: 215px;
+  font-size: 14px;
+}
+.client-mock header.meeting .body.chat-hidden .appointment-summary .appointment-time {
+  position: absolute;
+  left: 30px;
+  top: 60px;
+  font-size: 15px;
+}
+.client-mock .error-bar {
+  display: none;
+}
+.client-mock .client-homepage {
+  background-image: url(../images/mocks/client-home-bg.jpg);
+  background-repeat: repeat;
+  background-position: center top;
+  background-repeat: repeat-x;
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
+  .client-mock .client-homepage {
+    background-image: url(../images/mocks/client-home-bg@2x.jpg);
+    background-size: 10px 1171px;
+  }
+}
+.client-mock .client-homepage .inner {
+  height: 1171px;
+  min-width: 1150px;
+  margin: 0;
+  background-image: url(../images/mocks/client-home.jpg);
+  background-repeat: no-repeat;
+  background-position: center top;
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
+  .client-mock .client-homepage .inner {
+    background-image: url(../images/mocks/client-home@2x.jpg);
+    background-size: 1300px 1171px;
+  }
+}
+.client-mock .client-appointment {
+  background-color: #f2f2f2;
+}
+.client-mock .client-appointment .inner {
+  height: 336px;
+  min-width: 1150px;
+  margin: 0;
+  background-image: url(../images/mocks/appointment-body.jpg);
+  background-repeat: no-repeat;
+  background-position: left top;
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
+  .client-mock .client-appointment .inner {
+    background-image: url(../images/mocks/appointment-body@2x.jpg);
+    background-size: 1300px 336px;
+  }
+}
+.client-mock .client-meeting {
+  min-height: 508px;
+  min-width: 1150px;
+  margin: 0;
+  background-image: url(../images/mocks/client-meeting.jpg);
+  background-color: #fff;
+  background-repeat: no-repeat;
+  background-position: center top;
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
+  .client-mock .client-meeting {
+    background-image: url(../images/mocks/client-meeting@2x.jpg);
+    background-size: 1300px 503px;
+  }
+}
+.client-mock footer {
+  background-image: url(../images/mocks/client-footer-bg.jpg);
+  background-repeat: repeat;
+  background-position: center top;
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
+  .client-mock footer {
+    background-image: url(../images/mocks/client-footer-bg@2x.jpg);
+    background-size: 10px 428px;
+  }
+}
+.client-mock footer .inner {
+  height: 250px;
+  min-width: 1150px;
+  margin: 0;
+  background-image: url(../images/mocks/client-footer.jpg);
+  background-size: cover !important;
+  background-repeat: no-repeat;
+  background-position: center top;
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
+  .client-mock footer .inner {
+    background-image: url(../images/mocks/client-footer@2x.jpg);
+    background-size: 1300px 250px;
+  }
+}
+/*Calendar*/
+.bootstrap-datetimepicker-widget .col-md-6 {
+  width: 50% !important;
+  float: left;
+}
+.bootstrap-datetimepicker-widget table {
+  width: auto;
+  font-size: 13px;
+  border-collapse: separate;
+  border-spacing: 4px 0;
+}
+.bootstrap-datetimepicker-widget table th {
+  text-transform: uppercase;
+}
+.bootstrap-datetimepicker-widget table td.day {
+  box-sizing: border-box;
+  line-height: 18px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  font-size: 12px;
+  background-clip: padding-box;
+  border: 1px solid transparent;
+}
+.bootstrap-datetimepicker-widget table td.today:before {
+  display: none;
+}
+.bootstrap-datetimepicker-widget table td.active,
+.bootstrap-datetimepicker-widget table td.active:hover,
+.bootstrap-datetimepicker-widget table td.day:hover {
+  background-color: transparent;
+  border: 1px solid #52acbd;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+}
+/*Month Change*/
+.bootstrap-datetimepicker-widget table thead tr:first-child th:hover {
+  background-color: transparent;
+}
+.bootstrap-datetimepicker-widget table thead tr:first-child th:hover .glyphicon {
+  color: #52acbd;
+}
+/*Year-Century*/
+.bootstrap-datetimepicker-widget table th.picker-switch {
+  pointer-events: none;
+}
+/*Time Picker*/
+.timepicker-picker:before {
+  display: block;
+  content: "SET TIME";
+  width: 175px;
+  font-size: 13px;
+  font-weight: bold;
+  text-align: center;
+  margin: 10px 0 2px;
+}
+.bootstrap-datetimepicker-widget .timepicker-hour,
+.bootstrap-datetimepicker-widget .timepicker-minute,
+.bootstrap-datetimepicker-widget .timepicker-second,
+.bootstrap-datetimepicker-widget table td span {
+  background: rgba(255, 255, 255, 0.1);
+}
+.bootstrap-datetimepicker-widget .timepicker-hour,
+.bootstrap-datetimepicker-widget .timepicker-minute {
+  font-size: 30px;
+  letter-spacing: 1px;
+}
+.bootstrap-datetimepicker-widget table td span {
+  pointer-events: none;
+}
+.bootstrap-datetimepicker-widget a[data-action] {
+  color: #fff;
+}
+.bootstrap-datetimepicker-widget a[data-action]:hover {
+  color: #52acbd;
+}
+.bootstrap-datetimepicker-widget button[data-action] {
+  background-color: transparent;
+  padding: 0;
+  border: none;
+  font-size: 18px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  margin-bottom: 6px;
+}
+.bootstrap-datetimepicker-widget button[data-action]:hover {
+  border: 1px solid #52acbd;
+}
+.bootstrap-datetimepicker-widget button[data-action]:active {
+  background-color: transparent;
+}
+.advisor-mock .widget-holder .ths-widget-wrapper .ths-start-call .btn-start-call,
+.client-mock .widget-holder .ths-widget-wrapper .ths-start-call .btn-start-call {
+  background-color: #87b259;
+}
+.advisor-mock .widget-holder section .ths-messages-header,
+.client-mock .widget-holder section .ths-messages-header {
+  background-color: #87B259;
+  color: #fff;
+}
+.advisor-mock .widget-holder section .ths-messages-holder .ths-message-item .ths-item-text,
+.client-mock .widget-holder section .ths-messages-holder .ths-message-item .ths-item-text {
+  background-color: #e7f0de;
+  color: #636562;
+}
+.advisor-mock .widget-holder section .ths-messages-holder .ths-message-item .ths-item-text::before,
+.client-mock .widget-holder section .ths-messages-holder .ths-message-item .ths-item-text::before {
+  border-color: transparent #e7f0de transparent transparent;
+}
+.advisor-mock .widget-holder section .ths-messages-holder .ths-message-item .ths-user-name-initial,
+.client-mock .widget-holder section .ths-messages-holder .ths-message-item .ths-user-name-initial {
+  background-color: #87b259;
+  color: #fff;
+}
+.advisor-mock .widget-holder section .ths-messages-holder .ths-message-item.ths-message-sent .ths-item-text,
+.client-mock .widget-holder section .ths-messages-holder .ths-message-item.ths-message-sent .ths-item-text {
+  background-color: #f2f2f2;
+  color: #7c7c7c;
+}
+.advisor-mock .widget-holder section .ths-messages-holder .ths-message-item.ths-message-sent .ths-item-text::before,
+.client-mock .widget-holder section .ths-messages-holder .ths-message-item.ths-message-sent .ths-item-text::before {
+  border-color: #f2f2f2 transparent transparent transparent;
+}
+.advisor-mock .widget-holder section .ths-messages-holder .ths-message-item.ths-message-sent .ths-user-name-initial,
+.client-mock .widget-holder section .ths-messages-holder .ths-message-item.ths-message-sent .ths-user-name-initial {
+  background-color: #259de8;
+  color: #fff;
+}
+.advisor-mock .widget-holder section .ths-messages-holder .ths-messages-alert,
+.client-mock .widget-holder section .ths-messages-holder .ths-messages-alert {
+  background-color: #fedfc7;
+  color: #b9832d;
+}
+.advisor-mock .widget-holder section .ths-send-message-box button.ths-icon-check,
+.client-mock .widget-holder section .ths-send-message-box button.ths-icon-check {
+  background-image: url('../images/mocks/check.png');
+}
+/* Responsive Style */
+/* =================================================================================
+smaller than 1280 
+================================================================================= */
+/* =================================================================================
+smaller than 1024 
+================================================================================= */
+/* =================================================================================
+smaller than 760 
+================================================================================= */
+/* =================================================================================
+smaller than 620 
+================================================================================= */
+/* =================================================================================
+smaller than 428 
+================================================================================= */
+/* =================================================================================
+smaller than 320 
+================================================================================= */
+/* ================================================
+Plugin Css
+================================================ */
+/* Awesome Bootstrap Checkbox */
+/* Bootstrap Select */
+/* Bootstrap Toggle */
