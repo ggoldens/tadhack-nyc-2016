@@ -258,3 +258,7 @@ div.pstnImage i.uk-icon-phone-square {
             box-shadow: 0 0 5px #fff;
     }
 }
+
+.hidden {
+  display: none !important;
+}
