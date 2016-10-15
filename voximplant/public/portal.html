@@ -1,0 +1,151 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="google-site-verification" content="uFaSvNi_nUtMjbEJqH-Czhc4EBQp7El4fV6DTIsobKE" />
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Simple Care | Health &amp; Wellness</title>
+
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="stylesheets/root.css">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+</head>
+<body>
+<!--[if lt IE 10]>
+<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+<![endif]-->
+
+<div class="main-bg client-mock">
+
+
+
+  <header class="home">
+
+    <div class="client-status-container">
+      <div class="client-home-modal login" id="loginModal">
+        <div class="client-modal-close login">&#10005</div>
+        <div class="client-login-form">
+          <h2>Welcome back</h2>
+
+          <form id="client-login" class="login">
+
+            <div class="login-input-container">
+              <input class="login-input" type="text" placeholder="Email" name="email">
+              <input class="login-input" type="password" placeholder="Password" name="password">
+            </div>
+
+            <span class="login-label">Remember me</span><input class="login-checkbox" type="checkbox" name="remember">
+
+            <div class="login-error-container">
+              <span class="login-error"></span>
+            </div>
+
+            <button class="login-submit" type="button" value="Submit" id="submitLogin">Submit</button>
+          </form>
+
+          <div class="login-options">
+            <span class="option">Lost password?</span>
+            <span class="option">Create account</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="client-home-modal register">
+        <div class="client-modal-close register">&#10005</div>
+        <div class="client-login-form">
+          <h2>Register your account</h2>
+
+          <form id="client-register" class="login">
+
+            <div class="login-input-container">
+              <input class="login-input" type="text" placeholder="First Name" name="firstname">
+              <input class="login-input" type="text" placeholder="Last Name" name="lastname">
+              <input class="login-input" type="email" placeholder="Email" name="email">
+              <input class="login-input" type="password" placeholder="Password" name="password">
+            </div>
+
+
+            <br>
+
+            <input class="login-submit" type="submit" value="Submit">
+          </form>
+
+        </div>
+
+      </div>
+    </div>
+
+    <div class="inner">
+      <div class="client-menu-overlay">
+  <div class="client-menu-container">
+    <div class="client-menu-logo-container">
+      <div class="logo-image"></div>
+    </div>
+    <ul class="client-menu">
+      <li class="client-menu-item expand">HOW IT WORKS?</li>
+      <li class="client-menu-item expand">DOWNLOAD THE APP</li>
+      <li class="client-menu-item">ABOUT US</li>
+      <li class="client-menu-item login-actions expand">
+        <div class="client-status-option client-status">
+          <div class="container">
+            <span>Hello, </span>
+            <span class="client-name"></span>
+            <ul class="investing-menu">
+              <li class="investing-menu-item"><span class="client-logout">Logout</span></li>
+            </ul>
+          </div>
+
+        </div>
+        <span class="client-status-option client-login-menu">
+          <span class="display-modal login" id="loginBtn">Login</span><span>|</span><span class="display-modal register">Signup</span>
+        </span>
+      </li>
+    </ul>
+  </div>
+</div>
+
+    </div>
+
+  </header>
+
+  <div class="navbar"></div>
+
+  <div class="client-homepage">
+  </div>
+
+  <footer>
+    <div class="inner">
+      <img src="images/mocks/client-footer.png" alt="">
+    </div>
+  </footer>
+
+
+
+</div>
+
+<script type="text/javascript">
+      $(document).ready(function() {
+        $('#loginBtn').on('click', function() {
+          $('#loginModal').toggle();
+        });
+        $('#submitLogin').on('click', function() {
+          window.location.href = "call.html";
+        });
+      });
+</script>
+
+
+
+</body>
+</html>

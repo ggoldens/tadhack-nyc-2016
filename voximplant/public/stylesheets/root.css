@@ -5,7 +5,7 @@ Google Web Fonts
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,700,400italic);
 /* === Icons === */
 /* Font Awesome */
-@import url('plugin/font-awesome/font-awesome.min.css');
+
 /* ================================================
 Main Css
 ================================================ */
@@ -13,9 +13,6 @@ Main Css
 /* Shortcuts Css Codes */
 /** Shortcuts **/
 /*** Float ***/
-@import url('plugin/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css');
-@import url('plugin/bootstrap-select/bootstrap-select.css');
-@import url('plugin/bootstrap-toggle/bootstrap-toggle.min.css');
 .float-l {
   float: left;
 }
@@ -365,7 +362,7 @@ button:focus {
 /* Responsive Style */
 html,
 body {
-  font-family: 'Helvetica Neue', helvetica, arial, sans-serif;
+  font-family: 'Open Sans', helvetica, arial, sans-serif;
   font-weight: 300;
 }
 .test {
@@ -385,6 +382,9 @@ body {
   position: relative;
   height: 160px;
   margin: 0;
+}
+.client-menu {
+  font-weight: 700;
 }
 .advisor-mock header .client-menu-overlay {
   background: rgba(0, 0, 0, 0.5);
@@ -1017,7 +1017,7 @@ body {
 }
 html,
 body {
-  font-family: 'Helvetica Neue', helvetica, arial, sans-serif;
+  font-family: 'Open Sans', helvetica, arial, sans-serif;
   font-weight: 300;
 }
 .test {
@@ -1217,7 +1217,7 @@ body {
 .client-mock header .client-menu-overlay .client-menu-container .client-menu .client-menu-item.login-actions {
   color: white;
   padding: 0;
-  background-color: #00a7b4;
+  background-color: #D0021B;
   max-width: 200px;
   min-width: 150px;
 }
@@ -1425,12 +1425,6 @@ body {
   background-size: cover !important;
   min-width: 1150px;
 }
-@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
-  .client-mock header.home {
-    background-image: url(../images/mocks/client-hero@2x.jpg);
-    background-size: 1300px 760px;
-  }
-}
 .client-mock header.home .client-status-container {
   position: absolute;
   top: 0px;
@@ -1548,22 +1542,12 @@ body {
   margin-top: 15px;
 }
 .client-mock header.home .client-menu-overlay {
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 62, 49, 0.5);
   top: 5px;
 }
 .client-mock header.appointment,
 .client-mock header.meeting {
-  min-height: 197px;
-  background-image: url(../images/mocks/appointment-hero.jpg);
-  background-repeat: no-repeat;
-  background-size: 100% 197px;
-}
-@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
-  .client-mock header.appointment,
-  .client-mock header.meeting {
-    background-image: url(../images/mocks/appointment-hero@2x.jpg);
-    background-size: 100% 197px;
-  }
+  min-height: 100px;
 }
 .client-mock header.appointment .inner,
 .client-mock header.meeting .inner {
@@ -1583,7 +1567,7 @@ body {
   position: relative;
   width: 1130px;
   min-height: 450px;
-  margin: 190px auto 0;
+  margin: 100px auto 0;
   padding-left: 360px;
   box-sizing: border-box;
   padding-top: 25px;
@@ -1611,11 +1595,11 @@ body {
 .client-mock header.appointment .appointment-center .account-menu .account-menu-item.active,
 .client-mock header.meeting .appointment-center .account-menu .account-menu-item.active {
   font-size: 24px;
-  color: #00a7b4;
+  color: #d0021b;
 }
 .client-mock header.appointment .appointment-center .account-menu .account-menu-item.active a,
 .client-mock header.meeting .appointment-center .account-menu .account-menu-item.active a {
-  color: #00a7b4;
+  color: #d0021b;
 }
 .client-mock header.appointment .appointment-center .account-menu .account-menu-item:hover,
 .client-mock header.meeting .appointment-center .account-menu .account-menu-item:hover {
@@ -1888,8 +1872,7 @@ body {
 }
 .client-mock header.appointment .appointment-center .body.hollow-pie .confirmation-actions,
 .client-mock header.meeting .appointment-center .body.hollow-pie .confirmation-actions {
-  margin-left: 195px;
-  font-size: 14px;
+  font-size: 16px;
 }
 .client-mock header.appointment .appointment-center .body.hollow-pie .confirmation-actions .btn-rounded,
 .client-mock header.meeting .appointment-center .body.hollow-pie .confirmation-actions .btn-rounded {
@@ -2028,30 +2011,19 @@ body {
   }
 }
 .client-mock footer {
-  background-image: url(../images/mocks/client-footer-bg.jpg);
-  background-repeat: repeat;
-  background-position: center top;
+  background-color: #312325;
+  text-align: center;
 }
-@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
-  .client-mock footer {
-    background-image: url(../images/mocks/client-footer-bg@2x.jpg);
-    background-size: 10px 428px;
-  }
+.client-mock footer img {
+  display: block;
+  margin: 0 auto;
 }
 .client-mock footer .inner {
-  height: 250px;
   min-width: 1150px;
   margin: 0;
-  background-image: url(../images/mocks/client-footer.jpg);
   background-size: cover !important;
   background-repeat: no-repeat;
   background-position: center top;
-}
-@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
-  .client-mock footer .inner {
-    background-image: url(../images/mocks/client-footer@2x.jpg);
-    background-size: 1300px 250px;
-  }
 }
 /*Calendar*/
 .bootstrap-datetimepicker-widget .col-md-6 {
@@ -2194,22 +2166,22 @@ body {
 }
 /* Responsive Style */
 /* =================================================================================
-smaller than 1280 
+smaller than 1280
 ================================================================================= */
 /* =================================================================================
-smaller than 1024 
+smaller than 1024
 ================================================================================= */
 /* =================================================================================
-smaller than 760 
+smaller than 760
 ================================================================================= */
 /* =================================================================================
-smaller than 620 
+smaller than 620
 ================================================================================= */
 /* =================================================================================
-smaller than 428 
+smaller than 428
 ================================================================================= */
 /* =================================================================================
-smaller than 320 
+smaller than 320
 ================================================================================= */
 /* ================================================
 Plugin Css
@@ -2217,3 +2189,39 @@ Plugin Css
 /* Awesome Bootstrap Checkbox */
 /* Bootstrap Select */
 /* Bootstrap Toggle */
+#confirm-appointment {
+  background-color: #D0021B;
+}
+#confirm-appointment:hover {
+  border-color: #D0021B;
+}
+#disabled_btn {
+  background-color: #ccc;
+}
+#disabled_btn:hover {
+  cursor: default;
+  border-color: #fff;
+}
+.btn_table {
+  border-radius: 5px;
+  display: inline-block;
+  float: right;
+}
+.date_table {
+  vertical-align: middle;
+}
+.tr {
+  border-bottom: 1px solid #ccc;
+}
+#title_h1 {
+  font-weight: 300;
+  font-size: 48px;
+  margin-bottom: 1em;
+}
+#title_h2 {
+  font-weight: 300;
+  font-size: 36px;
+  border-bottom: 1px solid #D0021B;
+  padding-bottom: 0.2em;
+  margin-bottom: 0.5em;
+}
