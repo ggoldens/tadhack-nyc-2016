@@ -262,3 +262,7 @@ div.pstnImage i.uk-icon-phone-square {
 #control_panel {
   display: none !important;
 }
+#container div.vid {
+  background-color: #fff;
+  border: none;
+}
