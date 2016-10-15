@@ -1,0 +1,182 @@
+<div class="main-bg client-mock">
+
+  <header class="appointment calendar">
+    <div class="inner">
+      {{> navbar}}
+      <div class="appointment-center">
+        {{> health-chart-sidebar-center}}
+        <div class="header">
+            <span>Appointment Center</span>
+            <div class="actions">
+                <a href="/health-chart/appointment/list">
+                  <span class="appointment-count">0 Appointments</span>
+                </a>
+            </div>
+        </div>
+        <div class="body">
+            <div class="box-wrap calendar">
+              <div id="datetimepicker12"></div>
+            </div>
+            <div class="display-selected">
+              <span class="cal-day">MONDAY</span>
+              <span class="cal-date">AUGUST 3RD</span>
+              <span class="cal-time">10:00 AM</span>
+              <span class="cal-user"><a href="#">Bill Smith, M.D.</a></span>
+              <a href="#" class="btn-rounded active set-appointment">Set Appointment</a>
+              <a href="#" class="btn-rounded">Cancel</a>
+            </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="navbar"></div>
+
+  <div class="client-appointment">
+      <div class="inner"></div>
+  </div>
+
+  <footer>
+      <div class="inner"></div>
+  </footer>
+
+</div>
+
+<script type="text/javascript">
+    $(function () {
+      var $clientLoginMenu = $('.client-login-menu');
+      var $clientStatus = $('.client-status');
+
+      var showAppointmentsCount = function(appointments) {
+        var count = [appointments.length, appointments.length === 1 ? 'Appointment' :'Appointments'].join(' ');
+        $('.appointment-count').text(count);
+      };
+
+      var getAppointments = function() {
+
+        if ( !currentUser ) { return showAppointmentsCount([]); }
+
+        $.get(['/health-chart/appointment/client/', currentUser.id, '?token=', currentUser.auth.token].join(''))
+          .then(function(appointments) {
+            showAppointmentsCount(appointments);
+          }, function(error) {
+            console.log('ruh roh', error);
+          })
+      };
+
+      var getCurrentUser = function() {
+        return JSON.parse(window.localStorage.getItem('currentUser'));
+      };
+
+      var setCurrentUser = function(user) {
+        currentUser = user;
+        window.localStorage.setItem('currentUser', JSON.stringify(user));
+        updateUserInView();
+      };
+
+      var updateUserInView = function () {
+        $('.client-name').text([currentUser.firstName, currentUser.lastName].join(' '));
+        $clientLoginMenu.toggle();
+        $clientStatus.toggle();
+        getAppointments();
+      }
+
+      var currentUser = getCurrentUser();
+
+      var loginDefaultUser = function() {
+
+        var deferred = $.Deferred();
+
+        $.post('/user/login', {user: { email: 'bizdev@tokbox.com', password: 'demo'}})
+          .then(function(user) {
+            setCurrentUser(user);
+            deferred.resolve();
+          }, function (error) {
+            $('.login-error').text(error.responseText);
+            deferred.reject();
+        });
+
+        return deferred.promise();
+      };
+
+      console.log(currentUser)
+      // Set user name in UI
+      !!currentUser ? updateUserInView() : loginDefaultUser();
+
+        var $calendar = $('#datetimepicker12');
+        var appointmentDate;
+
+        var parseAppointmentDate = function(date) {
+            var dateComponents = date.format('dddd MMMM Do hh mm A').split(' ');
+            appointmentDate = {
+                day: dateComponents[0],
+                date: [dateComponents[1], dateComponents[2]].join(' '),
+                time: [dateComponents[3], ':', dateComponents[4], ' ', dateComponents[5]].join(''),
+                unix: date.valueOf()
+            };
+            return appointmentDate;
+        };
+
+        var setAppointmentDate = function(appointment) {
+            $('.cal-day').text(appointment.day);
+            $('.cal-date').text(appointment.date);
+            $('.cal-time').text(appointment.time);
+        };
+
+        var setAppointment = function(appointment){
+
+            appointmentDate = appointmentDate || parseAppointmentDate($calendar.data('DateTimePicker').date());
+
+            var buildQueryString = function(query, key) {
+                return [query, key, '=', appointment[key],'&'].join('');
+            };
+
+            var queryString = Object.keys(appointment).reduce(buildQueryString, '?').slice(0,-1);
+
+            var url = ['/health-chart/appointment/list', queryString].join('');
+
+            location.replace(url);
+        };
+
+        var createAppointment = function(e) {
+            !!e && e.preventDefault();
+
+            if ( !!currentUser ) {
+
+              appointmentDate = appointmentDate || parseAppointmentDate($calendar.data('DateTimePicker').date());
+              var data = {
+                  appointment: appointmentDate,
+                  user: currentUser,
+              }
+              $.post('/health-chart/appointment', data)
+                  .then(function(response){
+                      setAppointment(response.appointment);
+                  }, function(error) {
+                      console.log('Failed to create appointment');
+                  });
+            } else {
+              loginDefaultUser().then(function(){
+                createAppointment();
+              })
+            }
+
+        };
+
+        $calendar.datetimepicker({
+            inline: true,
+            sideBySide: true
+        });
+
+         $calendar.on('dp.change', function(e) {
+            var $date = $calendar.data('DateTimePicker').date();
+            setAppointmentDate(parseAppointmentDate($date));
+        });
+
+        $('.set-appointment').on('click', createAppointment);
+
+        // Set calendar to one week from now, rounded to the nearest quarter hour
+        var quarterHourAdjustment = function(){ return 15 - moment().minutes() % 15; }
+        var now = function() { return moment().add(0, 'days').add(quarterHourAdjustment(), 'minutes'); }
+        $calendar.data("DateTimePicker").date(now());
+    });
+</script>

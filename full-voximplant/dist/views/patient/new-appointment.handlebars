@@ -1,0 +1,68 @@
+<div class="main-bg client-mock">
+
+  <header class="appointment">
+    <div class="inner">
+      {{> navbar}}
+      <div class="appointment-center">
+        {{> health-chart-sidebar-center}}
+        <div class="header">
+          <span>Appointment Center</span>
+          <div class="actions">
+            {{!-- <span>0 Appointments</span> --}}
+          </div>
+        </div>
+        <div class="body">
+          <p>Would you like to meet in person, by phone, or by video call with your personal advisor?</p>
+          <div class="choose-type">
+            <div class="item">
+              <img src="../../images/mocks/f3bc7e10.meet-in-person-icon@2x.png" width="88px"/>
+              <p>Meet in Person</p>
+              <a href="#" class="btn-rounded">Go</a>
+            </div>
+            <div class="item">
+              <img src="../../images/mocks/87582305.by-phone-icon@2x.png" width="114px" />
+              <p>By Phone</p>
+              <a href="/health-chart/appointment/calendar" class="btn-rounded">Go</a>
+            </div>
+            <div class="item">
+              <img src="../../images/mocks/93379946.by-video@2x.png" width="94" />
+              <p>Comfortably from your home</p>
+              <a href="/health-chart/appointment/calendar" class="btn-rounded">Go</a>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="navbar"></div>
+
+  <div class="client-appointment">
+    <div class="inner">
+    </div>
+  </div>
+
+  <footer>
+    <div class="inner"></div>
+  </footer>
+
+</div>
+
+ <script type="text/javascript">
+
+   $(function() {
+     var $clientLoginMenu = $('.client-login-menu');
+     var $clientStatus = $('.client-status');
+
+      // Set user name in UI
+      var user = JSON.parse(window.localStorage.getItem('currentUser'));
+      if ( user ) {
+        $('.client-name').text([user.firstName, user.lastName].join(' '));
+        $clientLoginMenu.toggle();
+        $clientStatus.toggle();
+      };
+   });
+
+</script>

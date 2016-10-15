@@ -1,0 +1,315 @@
+/** Shortcuts **/
+/*** Float ***/
+.float-l{
+	float: left;
+}
+.float-r{
+	float: right;
+}
+.float-none{
+	float: none;
+}
+
+/** Text Align **/
+.text-l{
+	text-align: left;
+}
+.text-r{
+	text-align: right;
+}
+.text-c{
+	text-align: center;
+}
+
+
+/** Border None **/
+.border-b-none{
+	border-bottom:none;
+}
+.border-t-none{
+	border-top:none;
+}
+.border-l-none{
+	border-left:none;
+}
+.border-r-none{
+	border-right:none;
+}
+.border-none{
+	border:none;
+}
+
+/** Display **/
+.display-block{
+	display: block;
+}
+.hidden{
+	display: none;
+}
+
+/** Font Size **/
+.fontSizeEm(@px-val:16){
+  font-size:(@px-val/@base-fontSize)*1em;
+}
+
+
+/** Text Ellipsis **/
+.truncate-line(@width: 100%) {
+   text-overflow: ellipsis;
+   display: inline-block;
+   vertical-align: top;
+   white-space: nowrap;
+   overflow: hidden;
+   width: @width;
+}
+
+/** http:// lesselements .com **/
+.gradient(@color: #F5F5F5, @start: #EEE, @stop: #f0f4f7) {
+  background-color: @color;
+  background: -webkit-gradient(linear,
+                               left bottom,
+                               left top,
+                               color-stop(0, @start),
+                               color-stop(1, @stop));
+  background: -ms-linear-gradient(bottom,
+                                  @start,
+                                  @stop);
+  background: -moz-linear-gradient(center bottom,
+                                   @start 0%,
+                                   @stop 100%);
+  background: -o-linear-gradient(@stop,
+                                 @start);
+  filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=0)",@stop,@start));
+}
+.bw-gradient(@color: #F5F5F5, @start: 0, @stop: 255) {
+  background: @color;
+  background: -webkit-gradient(linear,
+                               left bottom,
+                               left top,
+                               color-stop(0, rgb(@start,@start,@start)),
+                               color-stop(1, rgb(@stop,@stop,@stop)));
+  background: -ms-linear-gradient(bottom,
+                                  rgb(@start,@start,@start) 0%,
+                                  rgb(@stop,@stop,@stop) 100%);
+  background: -moz-linear-gradient(center bottom,
+                                   rgb(@start,@start,@start) 0%,
+                                   rgb(@stop,@stop,@stop) 100%);
+  background: -o-linear-gradient(rgb(@stop,@stop,@stop),
+                                 rgb(@start,@start,@start));
+  filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=0)",rgb(@stop,@stop,@stop),rgb(@start,@start,@start)));
+}
+.bordered(@top-color: #EEE, @right-color: #EEE, @bottom-color: #EEE, @left-color: #EEE) {
+  border-top: solid 1px @top-color;
+  border-left: solid 1px @left-color;
+  border-right: solid 1px @right-color;
+  border-bottom: solid 1px @bottom-color;
+}
+.drop-shadow(@x-axis: 0, @y-axis: 1px, @blur: 2px, @alpha: 0.1) {
+  -webkit-box-shadow: @x-axis @y-axis @blur rgba(0, 0, 0, @alpha);
+  -moz-box-shadow: @x-axis @y-axis @blur rgba(0, 0, 0, @alpha);
+  box-shadow: @x-axis @y-axis @blur rgba(0, 0, 0, @alpha);
+}
+.rounded(@radius: 2px) {
+  -webkit-border-radius: @radius;
+  -moz-border-radius: @radius;
+  border-radius: @radius;
+}
+.border-radius(@topright: 0, @bottomright: 0, @bottomleft: 0, @topleft: 0) {
+  -webkit-border-top-right-radius: @topright;
+  -webkit-border-bottom-right-radius: @bottomright;
+  -webkit-border-bottom-left-radius: @bottomleft;
+  -webkit-border-top-left-radius: @topleft;
+  -moz-border-radius-topright: @topright;
+  -moz-border-radius-bottomright: @bottomright;
+  -moz-border-radius-bottomleft: @bottomleft;
+  -moz-border-radius-topleft: @topleft;
+  border-top-right-radius: @topright;
+  border-bottom-right-radius: @bottomright;
+  border-bottom-left-radius: @bottomleft;
+  border-top-left-radius: @topleft;
+  .background-clip(padding-box);
+}
+.opacity(@opacity: 0.5) {
+  -moz-opacity: @opacity;
+  -khtml-opacity: @opacity;
+  -webkit-opacity: @opacity;
+  opacity: @opacity;
+  @opperc: @opacity * 100;
+  -ms-filter: ~"progid:DXImageTransform.Microsoft.Alpha(opacity=@{opperc})";
+  filter: ~"alpha(opacity=@{opperc})";
+}
+.transition-duration(@duration: 0.2s) {
+  -moz-transition-duration: @duration;
+  -webkit-transition-duration: @duration;
+  -o-transition-duration: @duration;
+  transition-duration: @duration;
+}
+.transform(...) {
+  -webkit-transform: @arguments;
+  -moz-transform: @arguments;
+  -o-transform: @arguments;
+  -ms-transform: @arguments;
+  transform: @arguments;
+}
+.rotation(@deg:5deg){
+  .transform(rotate(@deg));
+}
+.scale(@ratio:1.5){
+  .transform(scale(@ratio));
+}
+.transition(@duration:0.2s, @ease:ease-out) {
+  -webkit-transition: all @duration @ease;
+  -moz-transition: all @duration @ease;
+  -o-transition: all @duration @ease;
+  transition: all @duration @ease;
+}
+.boxShadow(@insetAlpha:1, @dropAlpha:0.1){
+  -webkit-box-shadow: inset 0px 0px 5px 0px rgba(255,255,255,@insetAlpha), 0px 0px 8px 0px rgba(0,0,0,@dropAlpha);
+  -moz-box-shadow: inset 0px 0px 5px 0px rgba(255,255,255,@insetAlpha), 0px 0px 8px 0px rgba(0,0,0,@dropAlpha);
+  box-shadow: inset 0px 0px 5px 0px rgba(255,255,255,@insetAlpha), 0px 0px 8px 0px rgba(0,0,0,@dropAlpha);
+}
+.inner-shadow(@horizontal:0, @vertical:1px, @blur:2px, @alpha: 0.4) {
+  -webkit-box-shadow: inset @horizontal @vertical @blur rgba(0, 0, 0, @alpha);
+  -moz-box-shadow: inset @horizontal @vertical @blur rgba(0, 0, 0, @alpha);
+  box-shadow: inset @horizontal @vertical @blur rgba(0, 0, 0, @alpha);
+}
+.box-shadow(@arguments) {
+  -webkit-box-shadow: @arguments;
+  -moz-box-shadow: @arguments;
+  box-shadow: @arguments;
+}
+.box-sizing(@sizing: border-box) {
+  -ms-box-sizing: @sizing;
+  -moz-box-sizing: @sizing;
+  -webkit-box-sizing: @sizing;
+  box-sizing: @sizing;
+}
+.user-select(@argument: none) {
+  -webkit-user-select: @argument;
+  -moz-user-select: @argument;
+  -ms-user-select: @argument;
+  user-select: @argument;
+}
+.columns(@colwidth: 250px, @colcount: 0, @colgap: 50px, @columnRuleColor: #EEE, @columnRuleStyle: solid, @columnRuleWidth: 1px) {
+  -moz-column-width: @colwidth;
+  -moz-column-count: @colcount;
+  -moz-column-gap: @colgap;
+  -moz-column-rule-color: @columnRuleColor;
+  -moz-column-rule-style: @columnRuleStyle;
+  -moz-column-rule-width: @columnRuleWidth;
+  -webkit-column-width: @colwidth;
+  -webkit-column-count: @colcount;
+  -webkit-column-gap: @colgap;
+  -webkit-column-rule-color: @columnRuleColor;
+  -webkit-column-rule-style: @columnRuleStyle;
+  -webkit-column-rule-width: @columnRuleWidth;
+  column-width: @colwidth;
+  column-count: @colcount;
+  column-gap: @colgap;
+  column-rule-color: @columnRuleColor;
+  column-rule-style: @columnRuleStyle;
+  column-rule-width: @columnRuleWidth;
+}
+.translate(@x:0, @y:0) {
+  .transform(translate(@x, @y));
+}
+.background-clip(@argument: padding-box) {
+  -moz-background-clip: @argument;
+  -webkit-background-clip: @argument;
+  background-clip: @argument;
+}
+
+// Retina background-image support with non-retina fall back
+.image-2x(@image, @width, @height, @repeat: no-repeat) {
+  @filename  : ~`/(.*)\.(jpg|jpeg|png|gif)/.exec(@{image})[1]`;
+  @extension : ~`/(.*)\.(jpg|jpeg|png|gif)/.exec(@{image})[2]`;
+  background-image: ~`"url(@{filename}.@{extension})"`;
+  background-repeat: @repeat;
+
+	@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+		only screen and (min--moz-device-pixel-ratio: 1.5),
+		only screen and (min-device-pixel-ratio: 1.5) {
+      background-image: ~`"url(@{filename}@2x.@{extension})"`;
+      background-size: @width @height;
+  }
+}
+
+.image-3x(@image, @width, @height, @repeat: no-repeat) {
+  @filename  : ~`/(.*)\.(jpg|jpeg|png|gif)/.exec(@{image})[1]`;
+  @extension : ~`/(.*)\.(jpg|jpeg|png|gif)/.exec(@{image})[2]`;
+  background-image: ~`"url(@{filename}.@{extension})"`;
+  background-repeat: @repeat;
+
+	@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+		only screen and (min--moz-device-pixel-ratio: 1.5),
+		only screen and (min-device-pixel-ratio: 1.5) {
+      background-image: ~`"url(@{filename}@2x.@{extension})"`;
+      background-size: @width @height;
+  }
+	@media only screen and (-webkit-min-device-pixel-ratio: 3),
+		only screen and (min--moz-device-pixel-ratio: 3),
+		only screen and (min-device-pixel-ratio: 3) {
+      background-image: ~`"url(@{filename}@3x.@{extension})"`;
+      background-size: @width @height;
+	}
+}
+
+/*Whit to Black Grad*/
+
+.b2w-grad{
+background: -moz-linear-gradient(top,  rgba(255,255,255,0.1) 0%, rgba(0,0,0,0) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top,  rgba(255,255,255,0.1) 0%,rgba(0,0,0,0) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,  rgba(255,255,255,0.1) 0%,rgba(0,0,0,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1affffff', endColorstr='#00000000',GradientType=0 ); /* IE6-9 */
+}
+
+// Brake long words
+.hyphens(){
+  /* These are technically the same, but use both */
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+
+  -ms-word-break: break-all;
+  /* This is the dangerous one in WebKit, as it breaks things wherever */
+  word-break: break-all;
+  /* Instead use this non-standard one: */
+  word-break: break-word;
+
+  /* Adds a hyphen where the word breaks, if supported (No Blink) */
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}
+
+// Lovely Flex
+.flex-container {
+  -ms-box-orient: horizontal;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: flex;
+}
+.space-around(@a:space-around,@b:space-around) {
+  -webkit-justify-content: @a;
+  justify-content: @b;
+}
+
+.perfect-center {
+  .flex-container;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+/** Intrinsic Aspect Ratio **/
+.aspect-ratio(@width, @ratio) {
+    // calculate ratios by dividing width/height
+    // so a 16x9 box would be 16/9 = 1.777777778
+    width: unit(@width, ~'%') !important;
+    height: 0 !important;
+    padding-bottom: unit(@width / @ratio, ~'%') !important;
+}

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>THS</title>
+
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="../../assets/styles/widget.css">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body class="test">
+
+    <!--<iframe src="https://www.webrtc.ventures"></iframe>-->
+
+    <div class="centerWidgetTest">
+      <div class="ths-widget-wrapper ths-icon-set-main">
+        <div class="ths-feed-wrap">
+
+          <div class="ths-recording-label">
+            <span>Recording <em>00:01:15</em></span>
+          </div>
+        
+          <div class="ths-feed-holder"></div>          
+          
+          <div class="ths-feed-alert">
+            <!-- <div class="network-error"></div> -->
+            <!-- <div class="connection-error"></div> -->
+            <div class="ths-reconect-error">
+              <span>Error sharing the screen</span>
+              <button class="ths-btn">Try Again</button>
+            </div>
+          </div>
+          
+          <div class="ths-fullscreen">
+            <div class="ths-feed-main-video">
+              <div class="ths-feed-holder"></div>
+              <div class="ths-feed-mask" id="videoHolderBig"></div>
+              <img src="../../assets/images/mask/video-mask.png"/>
+              <div class="ths-feed-main-video-controls">
+                <button class="ths-icon-audio" id="muteRemoteCallBtn"></button>
+                <button class="ths-icon-audio active hidden" id="unmuteRemoteCallBtn"></button>
+                <button class="ths-icon-video" id="hiddenRemoteCameraBtn"></button>
+                <button class="ths-icon-video active hidden" id="showRemoteCameraBtn"></button>
+              </div>
+            </div>
+  
+            <div class="ths-feed-secondary-video">
+              <div class="ths-feed-mask" id="videoHolderSmall"></div>
+              <div class="ths-feed-secondary-video-controls">
+                <button class="ths-icon-video" id="hiddenCameraBtn"></button>
+                <button class="ths-icon-video active hidden" id="showCameraBtn"></button>
+              </div>
+            </div>
+  
+            <div class="ths-feed-call-controls">
+              <button class="ths-icon-recording active"></button>
+              <button class="ths-icon-mic"></button>
+              <button class="ths-icon-hangup"></button>
+              <button class="ths-icon-message disabled"></button>
+              <button class="ths-icon-screen disabled"></button>
+              <button class="ths-icon-full-screen light" id=""></button>
+            </div>
+          </div>
+          
+        </div>
+
+      </div>
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+
+  </body>
+</html>
+

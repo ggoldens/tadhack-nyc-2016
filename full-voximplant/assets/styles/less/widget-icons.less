@@ -1,0 +1,113 @@
+/*Feed Main Video*/
+.ths-icon-check{
+  .image-2x( "../images/icon/other/check.png" , 27px, 21px, @repeat: no-repeat);
+  background-position: center center;
+  &.active,
+  &:hover{
+  }
+}
+.ths-icon-share-large{
+  .image-2x( "../images/icon/other/screenshare-large.png" , 60px, 41px, @repeat: no-repeat);
+  background-position: center center;
+}
+.ths-icon-full-screen{
+  width: 28px;
+  height: 28px;
+  .image-2x( "../images/icon/other/maximize-window.png" , 28px, 28px, @repeat: no-repeat);
+  background-position: center center;
+}
+.ths-icon-full-screen-white{
+  width: 28px;
+  height: 28px;
+  .image-2x( "../images/icon/other/maximize-window-white.png" , 28px, 28px, @repeat: no-repeat);
+  background-position: center center;
+}
+.ths-icon-minimize-screen{
+    width: 28px;
+    height: 28px;
+    .image-2x( "../images/icon/other/minimize-window-white.png" , 28px, 28px, @repeat: no-repeat);
+    background-position: center center;
+}
+
+/*Icon Family Setup*/
+.icon-set(@path){
+  /*Call Controls*/
+  .ths-icon-recording{
+    .image-2x( "../images/icon/@{path}/record-not-recording.png" , 52px, 52px, @repeat: no-repeat);
+    background-position: center center;
+    border-color: @color-white30;
+    &.active,
+    &:hover{
+      border-color: @color-rouge;
+      .image-2x( "../images/icon/@{path}/recording.png" , 52px, 52px, @repeat: no-repeat);
+    }
+  }
+  .ths-icon-mic{
+    .image-2x( "../images/icon/@{path}/mic.png" , 52px, 52px, @repeat: no-repeat);
+    background-position: center center;
+    border-color: @color-white30;
+    &.active,
+    &:hover{
+      border-color: @color-rouge;
+      .image-2x( "../images/icon/@{path}/muted-mic.png" , 52px, 52px, @repeat: no-repeat);
+    }
+  }
+  .ths-icon-hangup{
+    .image-2x( "../images/icon/@{path}/hang-up.png" , 52px, 52px, @repeat: no-repeat);
+    background-position: center center;
+    background-color: @color-lipstick !important;
+    border-color: @color-lipstick !important;
+    &.active,
+    &:hover{
+    }
+  }
+  .ths-icon-message{
+    .image-2x( "../images/icon/@{path}/message.png" , 52px, 52px, @repeat: no-repeat);
+    border-color: @color-white30;
+    &.active,
+    &:hover{
+      border-color: @color-lipstick;
+    }
+  }
+  .ths-icon-screen{
+    .image-2x( "../images/icon/@{path}/screen-share.png" , 52px, 52px, @repeat: no-repeat);
+    background-position: center center;
+    border-color: @color-white30;
+    &.active,
+    &:hover{
+      border-color: @color-lipstick;
+    }
+  }
+  .ths-icon-startCall{
+    .image-2x( "../images/icon/@{path}/start-call.png" , 52px, 52px, @repeat: no-repeat);
+    background-position: center center;
+    background-color: @color-green !important;
+    border-color: @color-green !important;
+    &.active,
+    &:hover{
+    }
+  }
+
+  /*Feed Main Video*/
+  .ths-icon-audio{
+    width: 24px;
+    height: 24px;
+    .image-2x( "../images/icon/@{path}/no-sound.png" , 26px, 25px, @repeat: no-repeat);
+    background-position: center center;
+    &.active,
+    &:hover{
+      .image-2x( "../images/icon/@{path}/audio.png" , 25px, 25px, @repeat: no-repeat);
+    }
+  }
+  .ths-icon-video{
+    width: 24px;
+    height: 24px;
+    .image-2x( "../images/icon/@{path}/no-video.png" , 26px, 25px, @repeat: no-repeat);
+    background-position: center center;
+    &.active,
+    &:hover{
+      .image-2x( "../images/icon/@{path}/video.png" , 26px, 25px, @repeat: no-repeat);
+    }
+  }
+}
+

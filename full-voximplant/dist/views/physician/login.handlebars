@@ -1,0 +1,52 @@
+<div class="main-bg advisor-mock">
+
+    <header class="login">
+      <div class="inner">
+        <div class="client-menu-overlay">
+          <div class="client-menu-container">
+            <div class="client-menu-logo-container">
+              <div class="logo-image"></div>
+            </div>
+            <ul class="client-menu">
+              <li class="client-menu-item active">Welcome</li>
+              <li class="client-menu-item">Services</li>
+              <li class="client-menu-item">About</li>
+              <li class="client-menu-item login-actions login">
+                <a href="/login" class="display-modal login">Sign In</a>
+              </li>
+              <li class="client-menu-item login-actions">
+                <span>|</span>
+                <a href="/sign-up" class="display-modal register">Sign Up</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="advisor-sign-in">
+        <form method="post" class="form-sign-in">
+            <input name="username" type="text" placeholder="Username">
+            <input name="password" type="password" placeholder="Password">
+            <a href="#" class="forgot-link">Forgot Password?</a>
+            <button class="btn-signin">Sign In</button>
+        </form>
+    </div>
+
+    <footer>
+    </footer>
+
+</div>
+
+<script type="text/javascript">
+
+    $(function(){
+
+        $('.form-sign-in').submit(function (e) {
+            e.preventDefault();
+            location.replace('/dashboard');
+        });
+
+    });
+
+</script>

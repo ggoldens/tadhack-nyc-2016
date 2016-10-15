@@ -1,0 +1,30 @@
+.main-bg{
+  position: relative;
+  width: 100%;
+  min-height: 100%;
+  background-position: center top;
+}
+.body-styles(@width){
+  position: relative;
+  width: @width;
+  height: auto;
+  margin: 0 auto;
+}
+
+.error-bar{
+  height: ;
+  text-align: center;
+  background: @color-sunYellow-25;
+  color: @color-caramel;
+  line-height: 32px;
+  font-size: 12px;
+  font-weight: bold;
+  &.warning{
+    background: @color-sunYellow-25;
+    color: @color-caramel;
+  }
+  &.danger{
+    background: @color-fadedRed;
+    color: #fff;
+  }
+}

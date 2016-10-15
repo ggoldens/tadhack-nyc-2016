@@ -1,0 +1,124 @@
+
+<div class="main-bg client-mock">
+
+  <header class="appointment">
+    <div class="inner">
+      {{> navbar}}
+      <div class="appointment-center">
+        {{> health-chart-sidebar-center}}
+        <div class="header">
+          <span>Appointment Center</span>
+          <div class="actions">
+            <span class="appointment-count"></span>
+            <span>|</span>
+            <a href="/health-chart/appointment">Make Appointment</a>
+          </div>
+        </div>
+        <div class="body">
+          <div class="box-wrap list">
+            <div class="no-appointments">No appointments scheduled</div>
+            <ul class="appointment-list"></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="navbar"></div>
+
+  <div class="client-appointment">
+    <div class="inner">
+    </div>
+  </div>
+
+  <footer>
+    <div class="inner"></div>
+  </footer>
+
+</div>
+
+<script type="text/javascript">
+  $(function () {
+    var $clientLoginMenu = $('.client-login-menu');
+    var $clientStatus = $('.client-status');
+
+    var displayAppointments = function (appointments) {
+
+      if ( !appointments.length ) { $('.no-appointments').toggle(); }
+
+      var $appointmentList = $('.appointment-list');
+
+
+      var count = [appointments.length, appointments.length === 1 ? 'Appointment' :'Appointments'].join(' ');
+      $('.appointment-count').text(count);
+
+      appointments.forEach(function(appointment) {
+        $appointmentList.append(appointmentListItem(appointment));
+      })
+
+    }
+
+    // Set user name in UI
+    var user = JSON.parse(window.localStorage.getItem('currentUser'));
+    if ( user ) {
+      $('.client-name').text([user.firstName, user.lastName].join(' '));
+      $clientLoginMenu.toggle();
+      $clientStatus.toggle();
+    };
+
+    var getAppointments = function() {
+
+      if ( !user ) { return displayAppointments([]); }
+
+      $.get(['/health-chart/appointment/client/', user.id, '?token=', user.auth.token].join(''))
+        .then(function(appointments) {
+          displayAppointments(appointments);
+        }, function(error) {
+          console.log('ruh roh', error);
+        })
+    };
+
+    var appointmentListItem = function(appointment) {
+
+      var date = appointment.details;
+      var dateString = [date.day, ', ', date.date, ', at ', date.time].join('');
+      var meetingLink = ['/patient?appointment=', appointment.id].join('');
+
+      var el = [
+        '<li class="appointment-list-item">',
+        '<p><strong>Appointment with Bill Smith</strong></p>',
+        '<p><span class="el-time">' + dateString + '</span><em>|</em> <a class="meeting-link" href="' + meetingLink + '">Go to Meeting</a></p>',
+        '<div class="actions">',
+          '<a class="icon-edit" href="#"></a>',
+          '<a class="icon-trash" href="#"></a>',
+        '</div>',
+        '</li>'
+      ].join('');
+
+      return el;
+
+    };
+
+    getAppointments();
+
+    // // Appointment data is being passed via query params
+    // var queryString = window.location.search.slice(1);
+
+    // Clear query string from url bar
+    var currentPath = window.location.pathname;
+    window.history.replaceState({}, '', currentPath);
+
+
+
+    // Append the appointment id to the query string before redirecting to the meeting
+    var goToMeeting = function(e) {
+      e.preventDefault();
+      location.replace(['/patient?appointmentId=', appointmentId].join(''));
+    };
+
+    $('.meeting-link').click(goToMeeting);
+
+
+
+  });
+</script>

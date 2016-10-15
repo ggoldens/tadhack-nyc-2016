@@ -1,0 +1,70 @@
+<script type="text/template" id="base">
+  <div class="ths-widget-wrapper">
+    <div class="ths-feed-wrap" id="videoWraper">
+
+    </div>
+    <div class="ths-widget-chat" id="chatContainer"></div>
+    <!-- <div id="screenSharingComponent"></div> -->
+  </div>
+</script>
+
+<script type="text/template" id="call">
+
+    <div class="ths-feed-alert hidden" id="errorHolder">
+        <div class="network-error hidden" id="connectionError"></div>
+        <div class="connection-error hidden" id="callError"></div>
+        <div class="screenShare-error hidden" id="screenShareError"></div>
+        <div class="custom-error hidden" id="customError">
+            <span class="customErrorMessage" id="customErrorMessage"></span>
+        </div>
+    </div>
+
+    <div class="ths-start-call" id="thsPreCallFeedWrap">
+        <button class="btn-start-call" id="startCallBtn">Enter waiting room</button>
+    </div>
+
+    <div class="hidden" id="thsFeedWrap">
+
+        <div class="ths-feed-main-video">
+            <div class="ths-feed-holder"></div>
+
+            <div class="ths-feed-mask" id="videoHolderBig"></div>
+            <img id="videoMask" src=""/>
+            <div class="ths-feed-main-video-controls">
+                <button class="ths-icon-audio" id="muteRemoteCallBtn"></button>
+                <button class="ths-icon-audio active hidden" id="unmuteRemoteCallBtn"></button>
+                <button class="ths-icon-video" id="hideRemoteCameraBtn"></button>
+                <button class="ths-icon-video active hidden" id="showRemoteCameraBtn"></button>
+                <button class="ths-icon-full-screen-white" id="fullScreenBtn"></button>
+                <button class="ths-icon-minimize-screen light hidden" id="removefullScreenBtn"></button>
+            </div>
+        </div>
+
+        <div class="ths-feed-secondary-video ths-sec-cover">
+            <div class="ths-feed-mask" id="videoHolderSmall"></div>
+            <div class="ths-feed-secondary-video-controls">
+                <button class="ths-icon-video" id="hideCameraBtn"></button>
+                <button class="ths-icon-video active hidden" id="showCameraBtn"></button>
+            </div>
+        </div>
+
+        <div class="ths-feed-call-waiting" id="waitingForOther">
+            <span>Waiting for the other party to join</span>
+        </div>
+
+        <div class="ths-feed-call-controls" id="feedControls">
+            <button class="ths-icon-recording" id="recordBtn"></button>
+            <button class="ths-icon-mic" id="muteCallBtn"></button>
+            <button class="ths-icon-mic active hidden" id="unmuteCallBtn"></button>
+            <button class="ths-icon-hangup" id="endCallBtn"></button>
+            <button class="ths-icon-message" id="toggleMessageBtn"></button>
+        </div>
+    </div>
+
+</script>
+
+<script type="text/template" id="chatError">
+    <div class="ths-messages-alert">
+        <span>Your message cannot be sent. Check your network connection.</span>
+    </div>
+</script>

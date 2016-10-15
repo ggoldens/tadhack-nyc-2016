@@ -1,0 +1,42 @@
+<div class="main-bg client-mock">
+
+  <header class="appointment">
+    <div class="inner">
+      {{> navbar}}
+      <div class="appointment-center">
+        {{> health-chart-sidebar}}
+        <div class="body hollow-pie">
+          <img src="../images/mocks/profile@2x.jpg" />
+          <span class="client-name"></span>
+          <div class="confirmation-actions">
+            <strong>Next Appointment: </strong>
+            <span class="next-appointment"></span>
+            <a id="confirm-appointment" href="#" class="btn-rounded">Go to Appointment</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="navbar"></div>
+
+  <div class="client-appointment">
+    <div class="inner">
+    </div>
+  </div>
+
+  <footer>
+    <div class="inner"></div>
+  </footer>
+</div>
+
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+
+    {{> nav-updater}}
+
+
+
+  </body>

@@ -1,0 +1,144 @@
+<div class="main-bg advisor-mock">
+
+  <header class="dashboard">
+    <div class="inner">
+      <div class="client-menu-overlay">
+        <div class="client-menu-container">
+          <div class="client-menu-logo-container">
+            <div class="logo-image"></div>
+          </div>
+          <ul class="client-menu">
+            <li class="client-menu-item active">Account Portal</li>
+            <li class="client-menu-item">Messages</li>
+            <li class="client-menu-item">Clients</li>
+            <li class="client-menu-item login-actions login">
+              <span class="doctor-name">Dr. Bill</span>
+            </li>
+            <li class="client-menu-item login-actions">
+              <span>|</span>
+              <a href="/physician-home" class="display-modal register">Sign Out</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="advisor-dashboard">
+    <h1 class="appointment-list-header"><span>Upcoming Appointments </span><span class="appointment-count"></span></h1>
+    <div class="appointment-list">
+      <div class="scroll-wrap">
+        <table>
+        {{!-- Append appointments here --}}
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+  </footer>
+
+</div>
+
+<script type="text/javascript">
+
+  $(function() {
+
+    // Set top appointment to today's date.  Space the rest out by a few days.
+    var appointmentDate;
+    var setFakeDates = function() {
+      $('.set-date').each(function(i, e) {
+        appointmentDate = i === 0 ? Date.now() : moment(appointmentDate).add(Math.random() * 4 | 0, 'days');
+        $(e).text(moment(appointmentDate).format('MMM D'));
+      });
+    }
+
+
+
+    var displayAppointments = function(data) {
+      var appointments = data.appointments;
+      var clients = data.clientMap;
+
+      $('.appointment-count').text(['(',appointments.length ,')'].join(''));
+
+      var $appointmentTable = $('.appointment-list table');
+      appointments.forEach(function(appt){
+        $appointmentTable.append(appointmentItem(appt, clients[appt.clientId]));
+      });
+    }
+
+    var appointmentItem = function (appointment, client) {
+
+      var meetingLink = ['/physician?appointment=', appointment.id].join('');
+      var clientName, title, header;
+
+      if (client) {
+        title = 'Patient: ';
+        header = 'Appointment';
+        clientName = [client.firstName, client.lastName].join(' ');
+        actionsString = [
+          '<div class="actions btn">',
+            '<a class="btn green" href="' + meetingLink + '">Start Call</a>',
+          '</div>'
+        ].join('');
+      } else {
+        title = 'Referral: ';
+        header = 'New Appointment';
+        clientName = appointment.referral;
+        if (!appointment.confirmed) {
+          actionsString = [
+            '<div class="actions btn">',
+              '<a class="btn orange" href="#">Confirm</a>',
+            '</div>'
+          ].join('');
+        } else {
+          actionsString = [
+            '<div class="actions text">',
+              '<a class="btn green" href="#">Confirmed</a>',
+              '<span>|</span>',
+              '<a href="#">Edit</a>',
+            '</div>'
+          ].join('');
+        }
+
+      }
+
+      var el= [
+        '<tr class="active">',
+          '<td>',
+            '<span class="main set-date">' + appointment.details.date + '</span>',
+            '<span>' + (Math.random() * 30 + 1 | 0) + ' Days Ago</span>',
+          '</td>',
+          '<td>',
+            '<div class="float">',
+              '<span class="main">' + header + '</span>',
+              '<span>' + title + clientName  + '</span>',
+            '</div>',
+            actionsString,
+          '</td>',
+        '</tr>'
+      ].join('');
+
+      return el;
+
+    };
+
+
+    $.get('/health-chart/appointment/physician')
+      .then(function(appointmentData) {
+        for (var i = 0; i < 10; i++) {
+          appointmentData.appointments.push({
+            referral: 'Dr. Emily Jonson',
+            confirmed: i % 4 === 0,
+            details: {
+              date: 'March 22nd'
+            }
+          });
+        }
+        displayAppointments(appointmentData);
+        setFakeDates();
+      })
+
+  })
+
+</script>

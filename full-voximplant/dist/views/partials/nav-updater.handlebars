@@ -1,0 +1,154 @@
+<script type="text/javascript">
+
+    var setupNavBar = function() {
+
+
+      // DOM elements
+      var $clientLoginMenu = $('.client-login-menu');
+      var $clientStatus = $('.client-status');
+      var $displayLoginModal = $('.display-modal.login');
+      var $displayRegisterModal = $('.display-modal.register');
+      var $displayClientDropdown = $('.display-client-dropdown');
+      var $clientDropdown = $('.client-dropdown');
+      var $loginModal = $('.client-home-modal.login');
+      var $registerModal = $('.client-home-modal.register');
+      var $closeLoginModal = $('.client-modal-close.login');
+      var $closeRegisterModal = $('.client-modal-close.register');
+      var $login = $('#client-login');
+      var $logout = $('.client-logout');
+      var $register = $('#client-register');
+      var $toggleLogoutMenu = $('.login-actions');
+      var $investingMenu = $('.investing-menu');
+
+
+      // View updates
+      var updateUserInView = function(user) {
+        $('.client-name').text(user ? [user.firstName, user.lastName].join(' ') : '');
+        $clientLoginMenu.toggle();
+        $clientStatus.toggle();
+      };
+
+      var toggleLoginModal = function () {
+        $loginModal.toggle();
+      };
+
+      var toggleRegisterModal = function () {
+        $registerModal.toggle();
+      };
+
+      var toggleLogoutMenu = function () {
+        $investingMenu.toggle();
+      };
+
+
+      var toggleClientDropdown = function () {
+        $clientDropdown.toggle();
+      };
+
+      var getNextAppointment = function(user) {
+
+        if ( !user ) { return; }
+
+        $.get(['/health-chart/appointment/client/', user.id, '?token=', user.auth.token].join(''))
+          .then(function(appointments) {
+            var first = appointments[0];
+            if (first) {
+              var url = ['/patient?appointment=', first.id].join('');
+              $('#confirm-appointment').attr('href', url);
+              $('.next-appointment').text([first.details.date, first.details.time].join(', '));
+            } else {
+              $('.next-appointment').text('Today');
+            }
+          }, function(error) {
+            console.log('ruh roh', error);
+          })
+      };
+
+
+      // Handle existing user, registration & login
+      var user = window.localStorage.getItem('currentUser');
+      user = user ? JSON.parse(user) : null;
+
+      // Is the token good for at least an hour?
+      var tokenValid = function(auth) { return auth.expires >= Date.now() + (1000 * 60 * 60); };
+
+      if (!!user && tokenValid(user.auth)) {
+        updateUserInView(user)
+        if (window.location.pathname == '/') window.location = '/health-chart';
+        else getNextAppointment(user);
+      }
+
+      // Log in existing user
+      var loginClient = function() {
+        var user = {
+          email: $('#client-login input[name=email]').val(),
+          password: $('#client-login input[name=password]').val()
+        };
+
+        $('.login-error').empty();
+
+        $.post('/user/login', {user: user})
+          .then(function(user) {
+            window.localStorage.setItem('currentUser', JSON.stringify(user));
+            toggleLoginModal();
+            updateUserInView(user);
+            if (window.location.pathname == '/') window.location = '/health-chart';
+          },
+          function (error) {
+            $('.login-error').text(error.responseText);
+          })
+      };
+
+      var logoutClient = function() {
+        window.localStorage.removeItem('currentUser');
+        updateUserInView();
+        if (window.location.pathname !== '/') window.location = '/';
+      };
+
+      // Register new user
+      var registerClient = function() {
+
+          var user = {
+            firstName: $('#client-register input[name=firstname]').val(),
+            lastName: $('#client-register input[name=lastname]').val(),
+            email: $('#client-register input[name=email]').val(),
+            password: $('#client-register input[name=password]').val()
+          };
+
+          $.post('/user/create', {user: user})
+            .then(function(user) {
+              toggleRegisterModal();
+              toggleLoginModal();
+            },
+            function (error) {
+              console.log('error', error)
+            })
+      };
+
+
+      // DOM Events
+      $displayLoginModal.on('click', toggleLoginModal);
+      $closeLoginModal.on('click', toggleLoginModal);
+
+      $displayRegisterModal.on('click', toggleRegisterModal);
+      $closeRegisterModal.on('click', toggleRegisterModal);
+
+      $register.submit(function (e) {
+        e.preventDefault();
+        registerClient();
+      });
+
+      $login.submit(function (e) {
+        e.preventDefault();
+        loginClient();
+      });
+
+      $logout.on('click', logoutClient);
+
+      $toggleLogoutMenu.on('click', toggleLogoutMenu);
+
+      $displayClientDropdown.on('click', toggleClientDropdown);
+
+    };
+    $(document).ready(setupNavBar);
+</script>

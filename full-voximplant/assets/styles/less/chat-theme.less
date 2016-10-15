@@ -1,0 +1,61 @@
+@chat-sent-bg:          rgba(231, 240, 222, 1);
+@chat-sent-color:       rgba(99, 101, 98, 1);
+@chat-name-bg:          rgba(135, 178, 89, 1);
+@chat-alert-bg:         rgba(254, 223, 199, 1);
+@chat-alert-color:      rgba(185, 131, 45, 1);
+
+.advisor-mock, .client-mock{
+  .widget-holder {
+    .ths-widget-wrapper {
+      .ths-start-call{
+        .btn-start-call{
+          background-color: @chat-name-bg;
+        }
+      }
+    }
+    section {
+      .ths-messages-header{
+        background-color: #87B259;
+        color: #fff;
+      }
+      .ths-messages-holder {
+        .ths-message-item {
+          .ths-item-text {
+            background-color: @chat-sent-bg;
+            color: rgba(99, 101, 98, 1);
+            &::before{
+              border-color: transparent @chat-sent-bg transparent transparent
+            }
+          }
+          .ths-user-name-initial {
+            background-color: @chat-name-bg;
+            color: #fff;
+          }
+
+          &.ths-message-sent {
+            .ths-item-text {
+              background-color: #f2f2f2;
+              color: #7c7c7c;
+              &::before{
+                border-color: #f2f2f2 transparent transparent transparent
+              }
+            }
+            .ths-user-name-initial {
+              background-color: #259de8;
+              color: #fff;
+            }
+          }
+        }
+        .ths-messages-alert {
+          background-color: @chat-alert-bg;
+          color: @chat-alert-color;
+        }
+      }
+      .ths-send-message-box{
+        button.ths-icon-check{
+          background-image: url('../images/mocks/check.png');
+        }
+      }
+    }
+  }
+}

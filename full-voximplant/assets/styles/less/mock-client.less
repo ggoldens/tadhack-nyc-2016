@@ -1,0 +1,995 @@
+html,
+body{
+  font-family: @primaryfont;
+  font-weight: 300;
+}
+
+.test{
+  z-index: 100000;
+  position: absolute;
+  top:0;
+  left: 50%;
+  margin-left: -460px;
+  width: 920px;
+  height: 100%;
+  border: 1px solid red;
+
+}
+
+.client-mock{
+  a{
+    color: @color-cool-blue;
+    text-decoration: none;
+    &:hover{
+      text-decoration: underline;
+    }
+  }
+  .btn-rounded{
+    display: inline-block;
+    min-width: 170px;
+    padding: 0 30px;
+
+    color: #fff;
+    line-height: 34px;
+    text-align: center;
+
+    background-color: transparent;
+    border: 1px solid #fff;
+
+    .rounded(@borderRadius);
+    box-sizing: border-box;
+    &:hover{
+      text-decoration: none;
+      border-color: @color-cool-blue;
+      background: @color-lightBlue;
+    }
+    &.active{
+      background: @color-lightBlue;
+      border-color: @color-lightBlue;
+    }
+  }
+
+  header{
+    min-width: 1150px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: white;
+    background-position: center top;
+    .client-menu-overlay {
+      @clientMenuHeight: 91.5px;
+      background: @color-black50;
+      height: @clientMenuHeight;
+      width: 100%;
+      // min-width: 1150px;
+      position: absolute;
+      top: 0;
+      .client-menu-container {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        .flex-container;
+        -webkit-align-items: center;
+        align-items: center;
+        -webkit-justify-content: space-between;
+        justify-content: space-between;
+        &.no-padding {
+          padding: 0;
+        }
+        .client-menu-logo-container {
+          margin-left: 20px;
+          height: 100%;
+          color: white;
+          width: 300px;
+          .flex-container;
+          .logo-text {
+            .flex-container;
+            flex-direction: column;
+            -webkit-justify-content: space-around;
+            justify-content: space-around;
+            -webkit-align-items: center;
+            align-items: center;
+            padding: 20px 0;
+            .logo-text-large {
+              font-size: 32px;
+              text-align: center;
+            }
+            .logo-text-small {
+              font-size: 14px;
+              letter-spacing: 5px;
+              margin-right: -6px;
+            }
+          }
+          .logo-image {
+            background-image: url('../images/mocks/logo.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            width: 100%;
+            height: 100%;
+          }
+        }
+
+        .client-menu {
+          height: 100%;
+          color: white;
+          .client-menu-item {
+            position: relative;
+            display: inline-block;
+            font-size: 13px;
+            cursor: pointer;
+            height: @clientMenuHeight;
+            line-height: @clientMenuHeight;
+            text-transform: uppercase;
+            padding: 0 30px 0 15px;
+            &:hover {
+              background-color: rgba(255,255,255,.1);
+            }
+            &.expand::after {
+              content: '';
+              .image-3x('../images/mocks/rectangle-138-white.png', '' , '' , @repeat: no-repeat);
+              background-size: contain;
+              position: absolute;
+              top: 43px;
+              right: 10px;
+              height: 12px;
+              width: 12px;
+              margin-left: 10px;
+            }
+            .investing-menu {
+              display: none;
+              width: 100%;
+              position: absolute;
+              list-style: none;
+              top: 65.5px;
+              left: 0px;
+              background: @color-lightGrey;
+              color: @contenttext;
+              .investing-menu-item {
+                position: relative;
+                height: 45px;
+                line-height: 45px;
+                padding-left: 20px;
+                box-sizing: border-box;
+                border-top: 1px solid transparent;
+                border-bottom: 1px solid transparent;
+                &:hover {
+                  color: @color-cool-blue;
+                  background: white;
+                  border-color: @color-lightGrey;
+                }
+                .right-arrow {
+                  position: absolute;
+                  font-size: 30px;
+                  margin-left: 15px;
+                  top: -2px;
+                }
+                a {
+                  text-decoration: none;
+                  color: inherit;
+                }
+              }
+            }
+            &.login-actions {
+              color: white;
+              padding: 0;
+              background-color: @color-lightBlue;
+              max-width: 200px;
+              min-width: 150px;
+              span {
+                margin: 0 5px;
+              }
+              .client-status {
+                display: none;
+                color: white;
+                span {
+                  line-height: 20px;
+                  &:first-child{
+                    display: block;
+                    line-height: 20px;
+                  }
+                }
+                div.container {
+                  display: inline-flex;
+                  flex-direction: column;
+                  position: relative;
+                  top: -10px;
+                  padding: 0 30px 0 15px;
+                }
+                &.hidden {
+                  display: none;
+                }
+                .client-name {
+                  font-weight: 600;
+                }
+                .display-client-dropdown {
+                  display: inline-block;
+                  height: 14px;
+                  width: 14px;
+                  .image-3x('../images/mocks/rectangle-138-white.png', '', '', @repeat: no-repeat);
+                  background-size: contain;
+                  position: relative;
+                  top: 7px;
+                  left: 7px;
+                  cursor: pointer;
+                }
+                .client-dropdown {
+                  display: none;
+                  background-color: #ffffff;
+                  color: @color-lightGreen;
+                  position: absolute;
+                  top: 10px;
+                  right: 0;
+                  padding: 3px 20px;
+                  border-radius: 5px;
+                  z-index: 10;
+                }
+                .investing-menu-item {
+                  span {
+                    line-height: 45px;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    .client-settings-nav{
+      position: relative;
+      width: 1150px;
+      height: auto;
+      text-align: right;
+      margin: 0 auto 0;
+      padding: 8px 102px 0 0;
+      box-sizing: border-box;
+      .login-dropdown{
+        display: none;
+        position: absolute;
+        top:60px;
+        right: 55px;
+        width: 300px;
+        background: #fff;
+        text-align: left;
+        .rounded(3px);
+        .drop-shadow(0, 1px, 14px, .75);
+        &:before{
+          content: "";
+          position: absolute;
+          top:-20px;
+          right: 40px;
+          width: 0;
+          height: 0;
+          border-style: solid;
+          border-width: 0 20px 20px 20px;
+          border-color: transparent transparent #ffffff transparent;
+        }
+        .title{
+          text-align: center;
+          display: block;
+          margin: 30px 0 0;
+          font-size: 24px;
+          color: #2c2c2c;
+          font-weight: normal;
+        }
+        .body{
+          padding: 30px 40px 20px;
+          input[type="text"],
+          input[type="password"]{
+            box-sizing: border-box;
+            width: 100%;
+            height: 45px;
+            padding: 0 10px;
+            border: 1px solid #d8d8d8;
+            .rounded(3px);
+            margin-bottom: 15px;
+            font-size: 14px;
+          }
+          .remember-me{
+            position: relative;
+            display: block;
+            font-size: 14px;
+            font-weight: normal;
+            color: #626262;
+            padding-left: 26px;
+            margin: 10px 0 25px;
+            &:before{
+              position: absolute;
+              content: "";
+              top:-3px;
+              left: 0;
+              width: 18px;
+              height: 18px;
+              .rounded(2px);
+              border:1px solid #d8d8d8;
+            }
+          }
+          .submit{
+            width: 220px;
+            height: 34px;
+            margin: 0 auto;
+            .rounded(17px);
+            border: 1px solid #cecece;
+            color: #cecece;
+            font-size: 14px;
+            cursor: pointer;
+          }
+        }
+        .footer{
+          height: 52px;
+          background: #f8f8f8;
+          border-top:1px solid #eeeeee;
+          .border-radius(0,3px,3px,0);
+          box-sizing: border-box;
+          a{
+            box-sizing: border-box;
+            display: block;
+            float: left;
+            width: 50%;
+            border-right:1px solid #eeeeee;
+            text-align: center;
+            color: #626262;
+            line-height: 52px;
+            font-weight: normal;
+            font-size: 14px;
+            &:last-child{
+              border: none;
+
+            }
+          }
+        }
+      }
+      a{
+        font-size: 12px;
+      }
+    }
+    &.home{
+      height: 746px;
+      padding-top: 14px;
+      .image-2x('../images/mocks/client-hero.jpg', 1300px, 760px, @repeat: no-repeat);
+      background-size: cover !important;
+      min-width: 1150px;
+      .client-status-container {
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        left: 0px;
+        width: 100%;
+        margin: 0 auto;
+        .client-home-modal {
+          display: none;
+          position: absolute;
+          right: 65px;
+          top: 75px;
+          width: 250px;
+          background: white;
+          text-align: center;
+          padding: 20px 20px 40px 20px;
+          border-radius: 3px;
+          z-index: 5;
+          &.login {
+            right: 75px;
+          }
+          &.register {
+            right: 10px;
+          }
+          &:before {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-left: 15px solid transparent;
+            border-right: 15px solid transparent;
+            border-bottom: 15px solid white;
+            top: -15px;
+            right: 35px;
+          }
+          h2 {
+            font-family: @primaryfont;
+            margin: 10px 0;
+          }
+          .client-modal-close {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            cursor: pointer;
+          }
+          .login-input-container {
+              padding: 10px 0;
+              .login-input {
+              width: 90%;
+              height: 40px;
+              margin: 5px 0;
+              padding: 0 10px;
+              font-size: 12px;
+              color: @color-greyish;
+              border: 1px solid @color-greyish;
+              border-radius: 3px;
+              box-sizing: border-box;
+            }
+          }
+          .login-error-container {
+            height: 14px;
+            margin: 5px 0;
+            .login-error {
+              color: lightcoral;
+              font-size: 12px;
+              font-weight: 500;
+            }
+          }
+          .login-submit {
+            width: 90%;
+            height: 30px;
+            margin: 10px;
+            font-size: 14px;
+            border-radius: 30px;
+            background: @color-lightBlue;
+            color: white;
+            border: 0;
+            cursor: pointer;
+            &:hover{
+              background: darken(@color-lightBlue, 20%);
+              color: white;
+            }
+          }
+          .login-label {
+            color: @color-greyish;
+            font-size: 14px;
+            margin-right: 5px;
+
+          }
+          .login-options {
+            position: absolute;
+            background: @color-lightGrey;
+            border-top: 1px solid @color-greyish;
+            height: 40px;
+            width: 290px;
+            left: 0;
+            border-radius: 0 0 3px 3px;
+            .option {
+              color: @color-warmGrey;
+              line-height: 40px;
+              font-size: 14px;
+              font-weight: 500;
+              display: inline-block;
+              width: 45%;
+              &:first-child {
+                border-right: 1px solid @color-greyish;
+              }
+            }
+          }
+        }
+      }
+
+      .inner{
+        height: 410px;
+        min-width: 1150px;
+        margin: 0;
+        margin-top: 15px;
+      }
+      .client-menu-overlay {
+        background: @color-black50;
+        top: 5px;
+      }
+    }
+    &.appointment, &.meeting{
+      min-height: 197px;
+      .image-2x('../images/mocks/appointment-hero.jpg', 100%, 197px, @repeat: no-repeat);
+      background-size: 100% 197px;
+      .inner{
+        min-height: 504px;
+        min-width: 1150px;
+        margin: 0 auto;
+        padding: 1px 0;
+        background-repeat: no-repeat;
+        background-position: center top;
+      }
+      &.calendar {
+        .inner {
+          .client-menu-overlay {
+            .client-menu-container {
+              .client-menu {
+                .login-actions {
+                  .client-status {
+                    div.container {
+                      top: -24px;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      .appointment-center{
+        position: relative;
+        width: 1130px;
+        min-height: 450px;
+        margin: 190px auto 0;
+        padding-left: 360px;
+        box-sizing: border-box;
+        padding-top: 25px;
+        .account-menu {
+          list-style: none;
+          position: absolute;
+          top: 20px;
+          left: 0;
+          .account-menu-item {
+            color: @color-darkText;
+            font-size: 14px;
+            // font-weight: 500;
+            height: 55px;
+            width:275px;
+            line-height: 55px;
+            border-bottom: 1px solid @color-borderMenu;
+            -webkit-transition: all 0.3s ease;
+            -moz-transition: all 0.3s ease;
+            -o-transition: all 0.3s ease;
+            -ms-transition: all 0.3s ease;
+            &.active {
+              font-size: 24px;
+              color: @color-lightBlue;
+              a {
+                color: @color-lightBlue;
+              }
+            }
+            &:hover {
+              font-size: 23px;
+              cursor: pointer;
+            }
+            a {
+              color: @color-darkText;
+              text-decoration: none;
+            }
+          }
+        }
+        a.appointment-anchor {
+          position: absolute;
+          height: 44px;
+          width: 225px;
+          top: 230px;
+          left: 0;
+          cursor: pointer;
+        }
+        .header{
+          border-bottom: 1px solid @color-borderMenu;
+          color: @color-darkText;
+          height: 58px;
+          margin-bottom: 0;
+          >span{
+            display: block;
+            font-size: 36px;
+            line-height: 58px;
+            float: left;
+          }
+          .actions{
+            float: right;
+            >span,
+            >a{
+              display: inline-block;
+              line-height: 58px;
+              margin-left: 4px;
+            }
+          }
+        }
+        .body{
+          color: @color-darkText;
+          >p{
+            font-size: 18px;
+            margin-bottom: 8px;
+            strong{
+              font-weight: 400;
+              font-size: 20px;
+            }
+            &:first-child{
+              margin-top: 25px;
+            }
+          }
+          .box-wrap{
+            display: inline-block;
+            padding: 20px 35px;
+            background: rgba(0, 0, 0, 0.25);
+            color: #fff;
+            .rounded(5px);
+            margin-top: 25px;
+            &.create{
+              h4{
+                font-size: 30px;
+                font-weight: normal;
+                margin-bottom: 20px;
+              }
+              p{
+                margin-bottom: 20px;
+              }
+              .btn-rounded{
+                background-color: rgba(0, 0, 0, 0.3);
+                margin-right: 40px;
+                &:last-child{
+                  margin: 0;
+                }
+              }
+            }
+            &.list{
+              position: relative;
+              padding: 35px;
+              width: 100%;
+              box-sizing: border-box;
+              max-height: 300px;
+              overflow-y: scroll;
+              p{
+                strong{
+                  font-size: 22px;
+                }
+                em{
+                  display: inline-block;
+                  margin: 0 4px;
+                }
+                &:first-child{
+                  margin-bottom: 15px;
+                }
+              }
+              .no-appointments {
+                display: none;
+              }
+              .appointment-list {
+                list-style: none;
+                .appointment-list-item {
+                  position: relative;
+                  padding: 15px 10px 10px;
+                  margin-bottom: 10px;
+                  border-top: 1px solid #ffffff;
+
+                }
+              }
+              .actions{
+                position: absolute;
+                top:28px;
+                right: 20px;
+                a{
+                  display: inline-block;
+                  width: 30px;
+                  height: 30px;
+                }
+                .icon-edit{
+                  .image-2x('../images/mocks/edit.png', 22px, 17px, @repeat: no-repeat);
+                  background-position: center center ;
+                }
+                .icon-trash{
+                  .image-2x('../images/mocks/trash.png', 17px, 19px, @repeat: no-repeat);
+                  background-position: center center ;
+                }
+              }
+            }
+            &.calendar{
+              width: 528px;
+              min-height: 290px;
+              margin-bottom: 40px;
+              padding: 20px 15px 20px 30px;
+            }
+          }
+          .display-selected{
+            box-sizing: border-box;
+            float: right;
+            margin-top: 25px;
+            padding-top: 25px;
+            width: 170px;
+            span{
+              display: block;
+              font-weight: 400;
+              text-transform: uppercase;
+              &.cal-day{
+                font-size: 30px
+              }
+              &.cal-date{
+                font-size: 18px;
+                margin-top: 4px;
+              }
+              &.cal-time{
+                font-size: 30px;
+                margin: 15px 0;
+              }
+              &.cal-user{
+                display: block;
+                font-size: 20px;
+                margin: 0 0 30px;
+              }
+            }
+            .btn-rounded{
+              padding: 0;
+              margin-bottom: 15px;
+              background-color: rgba(0, 0, 0, 0.3);
+              &.active {
+                background-color: @color-lightBlue;
+                &:hover {
+                  background-color: darken(@color-lightBlue, 10%);
+                }
+              }
+            }
+          }
+          .choose-type{
+            .item{
+              display: inline-block;
+              width: auto;
+              text-align: center;
+              box-sizing: border-box;
+              margin: 40px 60px 0 0;
+              &:first-child{
+                margin-right: 120px;
+              }
+              img{
+                display: block;
+                margin: 0 auto;
+              }
+              p{
+                display: block;
+                font-weight: 600;
+                font-size: 18px;
+                height: 40px;
+                margin: 25px 0 15px;
+              }
+              .btn-rounded{
+                min-width: 120px;
+                background-color: @color-lightBlue;
+                color: #ffffff;
+                &:hover {
+                  background-color: darken(@color-lightBlue, 10%);
+                }
+              }
+            }
+          }
+          &.hollow-pie{
+            img{
+              width: 100%;
+            }
+            .client-name {
+              position: absolute;
+              top: 47px;
+              left: 552px;
+              font-size: 26px;
+            }
+            .confirmation-actions {
+              margin-left: 195px;
+              font-size: 14px;
+
+              .btn-rounded{
+                padding: 0;
+                margin: 10px 0;
+                display: block;
+                width: 220px;
+                background-color: @color-lightBlue;
+                &:hover {
+                  background-color: darken(@color-lightBlue, 10%);
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    &.meeting{
+      .body {
+        padding-left: 20px;
+        .widget-holder {
+          padding-top: 30px;
+          width: 100%;
+          >*{
+            width: 49%;
+          }
+          > div.ths-widget-wrapper {
+            position: relative;
+            display: inline-table;
+            .ths-start-call .btn-start-call {
+              width: 168px;
+            }
+
+            .ths-feed-wrap .ths-fullscreen {
+              top: 0 !important;
+              left: 0 !important;
+              height: 100% !important;
+              width: 100% !important;
+            }
+          }
+          section {
+            display: inline;
+            float: right;
+            margin-top: -20px;
+            .ths-widget-wrapper .ths-widget-extras .ths-messages-holder {
+              height: 278px;
+            }
+          }
+
+        }
+        .appointment-summary {
+          display: none;
+        }
+
+        &.chat-hidden {
+          padding-top: 30px;
+          .widget-holder {
+            width: 50%;
+            display: inline;
+          }
+          .appointment-summary {
+            position: absolute;
+            display: inline;
+            width: 367px;
+            float: right;
+            img {
+              width: 367px;
+            }
+            .client-name {
+              position: absolute;
+              top: 85px;
+              width: auto;
+              left: 215px;
+              font-size: 14px;
+            }
+            .appointment-time {
+              position: absolute;
+              left: 30px;
+              top: 60px;
+              font-size: 15px;
+            }
+          }
+        }
+      }
+    }
+    .top-nav{
+    }
+  }
+  .navbar{
+  }
+  nav{
+  }
+  .error-bar {
+    display: none;
+  }
+  .client-homepage{
+    .image-2x('../images/mocks/client-home-bg.jpg', 10px, 1171px, @repeat: repeat);
+    background-position: center top;
+    background-repeat: repeat-x;
+    .inner{
+      height: 1171px;
+      min-width: 1150px;
+      margin: 0;
+      .image-2x('../images/mocks/client-home.jpg', 1300px, 1171px, @repeat: no-repeat);
+      background-repeat: no-repeat;
+      background-position: center top;
+    }
+  }
+  .client-appointment{
+    background-color: rgba(242, 242, 242, 1);
+    .inner{
+      height: 336px;
+      min-width: 1150px;
+      margin: 0;
+      .image-2x('../images/mocks/appointment-body.jpg', 1300px, 336px, @repeat: no-repeat);
+      background-repeat: no-repeat;
+      background-position: left top;
+    }
+  }
+  .client-meeting{
+      min-height: 508px;
+      min-width: 1150px;
+      margin: 0;
+      .image-2x('../images/mocks/client-meeting.jpg', 1300px, 503px, @repeat: no-repeat);
+      background-color: #fff;
+      background-repeat: no-repeat;
+      background-position: center top;
+  }
+  footer{
+    .image-2x('../images/mocks/client-footer-bg.jpg', 10px, 428px, @repeat: repeat);
+    background-position: center top;
+    .inner{
+
+      height: 250px;
+      min-width: 1150px;
+      margin: 0;
+      .image-2x('../images/mocks/client-footer.jpg', 1300px, 250px, @repeat: no-repeat);
+      background-size: cover !important;
+      background-repeat: no-repeat;
+      background-position: center top;
+
+    }
+  }
+}
+
+
+/*Calendar*/
+.bootstrap-datetimepicker-widget .col-md-6{
+  width: 50% !important;
+  float: left;
+}
+.bootstrap-datetimepicker-widget table{
+  width: auto;
+  font-size: 13px;
+  border-collapse: separate;
+  border-spacing:  4px 0;
+}
+.bootstrap-datetimepicker-widget table th{
+  text-transform: uppercase;
+}
+.bootstrap-datetimepicker-widget table td.day{
+  box-sizing: border-box;
+  line-height: 18px;
+  .rounded(50%);
+  font-size: 12px;
+  background-clip: padding-box;
+  border: 1px solid transparent;
+}
+.bootstrap-datetimepicker-widget table td.today:before{
+  display: none;
+}
+.bootstrap-datetimepicker-widget table td.active,
+.bootstrap-datetimepicker-widget table td.active:hover,
+.bootstrap-datetimepicker-widget table td.day:hover{
+  background-color: transparent;
+  border: 1px solid @color-cool-blue;
+  .rounded(50%);
+}
+
+/*Month Change*/
+.bootstrap-datetimepicker-widget table thead tr:first-child th:hover{
+  background-color: transparent;
+  .glyphicon{
+    color: @color-cool-blue;
+  }
+}
+
+/*Year-Century*/
+.bootstrap-datetimepicker-widget table th.picker-switch{
+  pointer-events: none;
+}
+
+/*Time Picker*/
+.timepicker-picker{
+  &:before{
+    display: block;
+    content: "SET TIME";
+    width: 175px;
+    font-size: 13px;
+    font-weight: bold;
+    text-align: center;
+    margin: 10px 0 2px;
+  }
+}
+.bootstrap-datetimepicker-widget .timepicker-hour,
+.bootstrap-datetimepicker-widget .timepicker-minute,
+.bootstrap-datetimepicker-widget .timepicker-second,
+.bootstrap-datetimepicker-widget table td span{
+  background: rgba(255, 255, 255, 0.10);
+}
+.bootstrap-datetimepicker-widget .timepicker-hour,
+.bootstrap-datetimepicker-widget .timepicker-minute{
+  font-size: 30px;
+  letter-spacing: 1px;
+}
+
+
+.bootstrap-datetimepicker-widget table td span{
+  pointer-events: none;
+}
+
+.bootstrap-datetimepicker-widget a[data-action]{
+  color: #fff;
+  &:hover{
+    color: @color-cool-blue;
+  }
+}
+
+.bootstrap-datetimepicker-widget button[data-action]{
+  background-color: transparent;
+  padding: 0;
+  border: none;
+  font-size: 18px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  margin-bottom: 6px;
+  &:hover{
+    border: 1px solid @color-cool-blue;
+  }
+  &:active{
+    background-color: transparent;
+  }
+}

@@ -1,0 +1,159 @@
+<div class="main-bg advisor-mock" id={{ sessionAlias }}>
+
+    <header class="meeting">
+      <div class="inner">
+        <div class="client-menu-overlay">
+          <div class="client-menu-container">
+            <div class="client-menu-logo-container">
+              <div class="logo-image"></div>
+            </div>
+            <ul class="client-menu">
+              <li class="client-menu-item active">Account Portal</li>
+              <li class="client-menu-item">Messages</li>
+              <li class="client-menu-item">Clients</li>
+              <li class="client-menu-item login-actions login">
+                <span class="doctor-name">Dr. Bill</span>
+              </li>
+              <li class="client-menu-item login-actions">
+                <span>|</span>
+                <a href="/physician-home" class="display-modal register">Sign Out</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="advisor-meeting">
+
+        <div class="content-container">
+            <div class="content-left">
+                <h1>Patient: <span class="client-name"></span></h1>
+                <p>Member: <strong>5265-8964</strong> Age: <strong>47</strong>   Gender: <strong>M</strong>   Occupation: <strong>Attorney</strong>   Goal: <strong>Weigh Loss</strong></p>
+
+                <div class="investment-data-container">
+                    <ul class="investment-data-nav">
+                        <li class="nav-tab tab-0 active" data-tab="0">Medical History</li>
+                        <li class="nav-tab tab-1" data-tab="1">Treatment Plan</li>
+                        <li class="nav-tab tab-2" data-tab="2">Prescriptions</li>
+                        <li class="nav-tab tab-3" data-tab="3">Appointments</li>
+                        <li class="nav-tab tab-4" data-tab="4">Insurance/Billing</li>
+                    </ul>
+                    <div class="investment-data-content">
+                        <div class="investment-tab tab-0 active"></div>
+                        <div class="investment-tab tab-1"></div>
+                        <div class="investment-tab tab-2"></div>
+                        <div class="investment-tab tab-3"></div>
+                        <div class="investment-tab tab-4"></div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="content-right">
+                <div class="score-holder">
+                  <span class="patient-score"></span>
+                  <span class="label">Health Score</span>
+                </div>
+                <div class="widget-holder" id="main_container"></div>
+            </div>
+
+        </div>
+
+        <div class="annotation-toolbar-container">
+            <div id="toolbar"></div>
+        </div>
+    </div>
+
+    <footer>
+    </footer>
+
+</div>
+<script type="text/javascript">
+    $(document).ready(function() {
+        var clientName = '';
+        var options = {
+           user: {
+                name: 'Dr. Bill Smith',
+                id: 123,
+                role:'physician'
+            },
+            client_profile:{
+                name: 'Justin Melene',
+                age: 42,
+                gender: 'Male',
+                ocupation: 'Doctor',
+                goal: 'Weigh Loss',
+                notes: []
+            },
+            roomFullMessage: [
+              '<p>',
+              '  Another physician is already using this room.',
+              ' <br/> Please wait until his appointment has finished.',
+              '</p>',
+            ].join(''),
+            onTHSStarted:function(){
+                $('.ths-messages-header').html('')
+                  .html('<span>Chat with ' + clientName + '</span>')
+                  .removeClass('hidden');
+            },
+            onTHSEnded:function(){
+                console.log('Telehealth Solution widget ENDED');
+            },
+            onTHSError:function(error){
+              console.log('There is an error loading the Telehealth Solution widget: ' + error.message);
+            },
+            onMessageBoxToggled:function(visible) {
+              if (visible) $('#chatSectionContainer').show();
+              else $('#chatSectionContainer').hide();
+            },
+            onRoomFull:function() {
+              console.log('Too many patients here');
+            },
+            el: $("#main_container"),
+            extensionID: '{{ chromeExtId }}',
+            extensionPathFF: 'ff-extension',
+            annotation: false
+        };
+
+        var init = function(session) {
+
+            clientName = [session.client.firstName, session.client.lastName].join(' ');
+
+            $('.client-name').text(clientName);
+            options.client_profile.name = [session.client.firstName, session.client.lastName].join(' ');
+            options.apiKey = session.apiKey;
+            options.sessionId = session.sessionId;
+            options.token = session.physicianToken;
+
+            ths.init(options);
+        };
+
+        var appointmentId = window.location.search.slice(1).split('=')[1];
+
+        // Get session info
+        $.get('/health-chart/appointment/' + appointmentId +'/session?role=physician')
+        .then(function(session) {
+            if (session.apiKey) init(session);
+            else {
+                // the appointmentId didn't exist.
+                window.location.replace('/dashboard');
+            }
+        });
+
+        var $nav = $('.investment-data-nav');
+        var currentTab = '0';
+        var switchTab = function(e) {
+
+            if ( currentTab === e.target.dataset.tab ) { return; }
+            currentTab = e.target.dataset.tab;
+            $('.nav-tab').removeClass('active');
+            $('.investment-tab').removeClass('active');
+            $(['.tab', currentTab].join('-')).addClass('active');
+
+        };
+
+        // $nav.on('click', switchTab);
+        $('.patient-score').text(parseInt(80 + Math.random() * 20) + '/100');
+    });
+</script>

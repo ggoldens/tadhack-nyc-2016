@@ -1,0 +1,90 @@
+<div class="main-bg client-mock">
+
+{{!--   <header class="home">
+    <div class="client-login-menu-container">
+      <div class="client-login-menu">
+        <span class="display-login-form">Login</span><span>|</span><span>Signup</span>
+      </div>
+    </div>
+    <div class="inner">
+    </div>
+  </header> --}}
+
+  <header class="home">
+
+    <div class="client-status-container">
+      <div class="client-home-modal login">
+        <div class="client-modal-close login">&#10005</div>
+        <div class="client-login-form">
+          <h2>Welcome back</h2>
+
+          <form id="client-login" class="login">
+
+            <div class="login-input-container">
+              <input class="login-input" type="text" placeholder="Email" name="email">
+              <input class="login-input" type="password" placeholder="Password" name="password">
+            </div>
+
+            <span class="login-label">Remember me</span><input class="login-checkbox" type="checkbox" name="remember">
+
+            <div class="login-error-container">
+              <span class="login-error"></span>
+            </div>
+
+            <input class="login-submit" type="submit" value="Submit">
+          </form>
+
+          <div class="login-options">
+            <span class="option">Lost password?</span>
+            <span class="option">Create account</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="client-home-modal register">
+        <div class="client-modal-close register">&#10005</div>
+        <div class="client-login-form">
+          <h2>Register your account</h2>
+
+          <form id="client-register" class="login">
+
+            <div class="login-input-container">
+              <input class="login-input" type="text" placeholder="First Name" name="firstname">
+              <input class="login-input" type="text" placeholder="Last Name" name="lastname">
+              <input class="login-input" type="email" placeholder="Email" name="email">
+              <input class="login-input" type="password" placeholder="Password" name="password">
+            </div>
+
+            {{!-- <span class="login-label">Remember me</span><input class="login-checkbox" type="checkbox" name="remember"> --}}
+            <br>
+
+            <input class="login-submit" type="submit" value="Submit">
+          </form>
+
+        </div>
+
+      </div>
+    </div>
+
+    <div class="inner">
+      {{> navbar}}
+    </div>
+
+  </header>
+
+  <div class="navbar"></div>
+
+  <div class="client-homepage">
+    <div class="inner">
+    </div>
+  </div>
+
+  <footer>
+    <div class="inner"></div>
+  </footer>
+
+
+
+</div>
+
+{{> nav-updater}}

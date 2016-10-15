@@ -1,0 +1,557 @@
+html,
+body{
+  font-family: @primaryfont;
+  font-weight: 300;
+}
+
+.test{
+  z-index: 100000;
+  position: absolute;
+  top:0;
+  left: 50%;
+  margin-left: -460px;
+  width: 920px;
+  height: 100%;
+  border: 1px solid red;
+
+}
+
+.advisor-mock{
+  &.landing{
+    background-color: rgba(92, 92, 92, 1);
+  }
+  header{
+    position: relative;
+    height: 160px;
+    margin: 0;
+    .client-menu-overlay {
+      @clientMenuHeight: 91.5px;
+      background: @color-black50;
+      height: @clientMenuHeight;
+      width: 100%;
+      // min-width: 1150px;
+      position: absolute;
+      top: 0;
+      .client-menu-container {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        .flex-container;
+        -webkit-align-items: center;
+        align-items: center;
+        -webkit-justify-content: space-between;
+        justify-content: space-between;
+        &.no-padding {
+          padding: 0;
+        }
+        .client-menu-logo-container {
+          margin-left: 20px;
+          height: 100%;
+          color: white;
+          width: 300px;
+          .flex-container;
+          .logo-image {
+            .image-2x('../images/mocks/simple-care-l-o-g-o.png', 100%, auto, @repeat: no-repeat);
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            width: 100%;
+            height: 100%;
+          }
+        }
+
+        .client-menu {
+          height: 100%;
+          color: white;
+          padding-right: 20px;
+          .client-menu-item {
+            position: relative;
+            display: inline-block;
+            font-size: 16px;
+            cursor: pointer;
+            height: @clientMenuHeight;
+            line-height: @clientMenuHeight;
+            padding: 0 30px 0 15px;
+            &.active {
+              height: 60px;
+              border-bottom: 3px solid #fff;
+              width: auto;
+              padding: 0;
+              margin: 0 30px 0 15px;
+            }
+            .investing-menu {
+              display: none;
+              width: 100%;
+              position: absolute;
+              list-style: none;
+              top: 65.5px;
+              left: 0px;
+              background: @color-lightGrey;
+              color: @contenttext;
+              .investing-menu-item {
+                position: relative;
+                height: 45px;
+                line-height: 45px;
+                padding-left: 20px;
+                box-sizing: border-box;
+                border-top: 1px solid transparent;
+                border-bottom: 1px solid transparent;
+                &:hover {
+                  color: @color-cool-blue;
+                  background: white;
+                  border-color: @color-lightGrey;
+                }
+                a {
+                  text-decoration: none;
+                  color: inherit;
+                }
+              }
+            }
+            &.login-actions{
+              color: white;
+              padding: 0;
+              &.login {
+                margin-left: 80px;
+              }
+              a,span {
+                margin: 0 5px;
+                color: white;
+              }
+            }
+          }
+        }
+      }
+    }
+    .top-nav{
+      width: 1024px;
+      position: absolute;
+      top:50px;
+      right: 50%;
+      margin-right: -512px;
+      padding-right: 55px;
+      text-align: right;
+      a{
+        display: inline-block;
+        line-height: 64px;
+        color: @color-water-blue;
+        font-size: 16px;
+        text-decoration: none;
+        margin: 0 0 0 26px;
+      }
+      .btn{
+        padding: 0 44px;
+        line-height: 48px;
+        border: 1px solid @color-water-blue-30;
+        .rounded(8px);
+
+      }
+    }
+    &.home{
+      height: auto;
+      width: 100%;
+      img.overlay {
+        width: 100%;
+      }
+    }
+    &.login {
+      height: 374px;
+      min-width: 1150px;
+      .image-2x('../images/mocks/header.png', 1300px, 374px, @repeat: no-repeat);
+      background-size: cover !important;
+      background-repeat: no-repeat;
+      background-color: #ffffff;
+      background-position: center top;
+    }
+    &.dashboard{
+      height: 374px;
+      min-width: 1150px;
+      .image-2x('../images/mocks/header.png', 1300px, 374px, @repeat: no-repeat);
+      background-size: cover !important;
+      background-repeat: no-repeat;
+      background-color: #ffffff;
+      background-position: center top;
+    }
+    &.meeting{
+      height: 374px;
+      min-width: 1150px;
+      .image-2x('../images/mocks/header-meeting.png', 1300px, 374px, @repeat: no-repeat);
+      background-size: cover !important;
+      background-repeat: no-repeat;
+      background-color: #ffffff;
+      background-position: center top;
+    }
+  }
+  .navbar{
+    .body-styles(1024);
+    height: 52px;
+    width: auto;
+    margin: 10px 0 0;
+    min-width: 1024px;
+    background-image: url('../images/mocks/menu-bar.jpg');
+    background-size: 1024px 52px;
+    background-repeat: repeat;
+    background-color: #ffffff;
+    background-position: center top;
+    background-position: center center;
+
+  }
+  nav{
+    .body-styles(1024px);
+    height: 53px;
+    width: auto;
+    min-width: 1024px;
+    .image-2x('../images/mocks/advisor-menu.jpg', 1400px, 53px, @repeat: no-repeat);
+    background-repeat: repeat;
+    background-color: #ffffff;
+    background-position: center center;
+    &.meeting{
+      .image-2x('../images/mocks/advisor-menu-meeting.jpg', 1400px, 53px, @repeat: repeat);
+      background-position: center center;
+    }
+  }
+  .advisor-homepage{
+    .body-styles(100%);
+    top: -2px;
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+  .advisor-sign-in{
+    position: relative;
+    margin-top: 40px;
+    .body-styles(922px);
+    height: 560px;
+    .image-2x('../images/mocks/advisor-sign-in.png', 922px, 414px, @repeat: no-repeat);
+    background-size: 922px 414px;
+    background-repeat: no-repeat;
+    background-color: #ffffff;
+    background-position: center top;
+    background-position: center center;
+    background-position: center top;
+    background-position-y: 100px;
+    .form-sign-in{
+      position: absolute;
+      top: 221px;
+      left: 50%;
+      padding: 5px;
+      margin-left: -441px;
+      width: 405px;
+      height: 250px;
+      background: #ffffff;
+      input{
+        box-sizing: border-box;
+        width: 100%;
+        height: 45px;
+        padding: 0 10px;
+        border: 1px solid @color-greyishLight;
+        .rounded(3px);
+        margin-top: 24px;
+        font-size: 14px;
+      }
+      .forgot-link{
+        display: block;
+        text-align: right;
+        line-height: 1;
+        color: @color-water-blue;
+        font-size: 16px;
+        text-decoration: none;
+        margin: 0;
+        margin: 12px 0 0;
+        font-size: 14px;
+      }
+      .btn-signin{
+        width: 220px;
+        height: 45px;
+        .rounded(4px);
+        color: #fff;
+        font-size: 14px;
+        text-transform: uppercase;
+        text-shadow: 0px 1px 1px @greyish-brown-20;
+        .gradient(@theme-color, lighten(@theme-color, 5%), darken(@theme-color, 5%));
+        &:hover{
+          background: @theme-color;
+        }
+      }
+    }
+  }
+  .advisor-dashboard{
+    position: relative;
+    .body-styles(1024px);
+    height: 685px;
+    // .image-2x('../images/mocks/advisor-dashboard.jpg', 1024px, 148px, @repeat: no-repeat);
+    background-repeat: no-repeat;
+    background-color: #ffffff;
+    background-position: center top;
+    background-position: center center;
+    background-position: center top;
+    .appointment-list-header {
+      position: absolute;
+      right: 0;
+      left: 0;
+      width: 922px;
+      margin: 40px auto 0px;
+      color: @theme-color;
+      font-size: 28px;
+      font-weight: 300;
+    }
+    .appointment-list{
+      position: absolute;
+      top:100px;
+      left:50px;
+      width: 920px;
+      // height: 475px;
+      background: #FAFAFA;
+      border: 1px solid @color-greyishLight;
+      .rounded(3px);
+      overflow: hidden;
+      .scroll-wrap{
+        width: 100%;
+        max-height: 515px;
+        .rounded(3px);
+        overflow: hidden;
+        overflow-y: scroll;
+        table{
+          font-weight: normal;
+          width: 100%;
+          border: none;
+          outline: none;
+          margin: 0;
+          padding: 0;
+          tr{
+            border: 1px solid #fff;
+            outline: none;
+            margin: 0;
+            padding: 0;
+            border-bottom: 1px solid #e3e3e3;
+            &.active:hover{
+              td{
+                // cursor: pointer;
+                background: rgba(32,144,217,0.15);
+                border: 1px solid #2090d9;
+                position: relative;
+                .appointment-link {
+                  position: absolute;
+                  height: 100%;
+                  width: 100%;
+                }
+              }
+            }
+            td{
+              border: none;
+              outline: none;
+              margin: 0;
+              padding: 0;
+              height: 80px;
+              vertical-align: middle;
+              padding: 0 20px;
+              background: #fafafa;
+              &:first-child{
+                border-right: 1px solid #e3e3e3;
+              }
+              span{
+                color: #828282;
+                display: block;
+                line-height: 1.4;
+                &.main{
+                  color: #494949;
+                }
+              }
+              .float{
+                float: left;
+              }
+              .actions{
+                position: relative;
+                top:0;
+                right: 0;
+                float: right;
+                &.text{
+                  span,
+                  a{
+                    padding: 15px 0;
+                    display: inline-block;
+                    color: #333333;
+                    font-size: 14px;
+                    text-decoration: none;
+                    margin: 0 2px;
+                    &.green{
+                      color:#5c9b13;
+                    }
+                    &.blue{
+                      color:#2d9fe7;
+                    }
+                  }
+                }
+                &.btn{
+                  padding-top: 3px;
+                  a{
+                    display: inline-block;
+                    padding: 0 30px;
+                    line-height: 38px;
+                    border: 1px solid #259de8;
+                    .rounded(4px);
+                    text-decoration: none;
+
+                    &.green{
+                      color: white;
+                      background: @color-olive;
+                      border-color: darken(@color-olive, 10%);
+
+                      &:hover{
+                        background: lighten(@color-olive, 10%);
+                        color: #fff;
+                      }
+                    }
+                    &.orange{
+                      color: white;
+                      background: @color-orange;
+                      border-color: darken(@color-orange, 10%);
+
+                      &:hover{
+                        background: lighten(@color-orange, 10%);
+                        color: #fff;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+          tr:nth-child(odd){
+            td{
+              background: #fff;
+            }
+          }
+        }
+      }
+    }
+  }
+  .advisor-meeting{
+    position: relative;
+    .body-styles(1024px);
+    min-height: 854px;
+    box-sizing: border-box;
+    background-color: #ffffff;
+    .content-container {
+      margin-top: 90px;
+      padding: 0 10px;
+      .flex-container;
+      -webkit-justify-content: space-between;
+      justify-content: space-between;
+      .content-left {
+        width: 600px;
+        h1 {
+          font-family: @primaryfont;
+          font-size: 28px;
+          font-weight: 200;
+          color: @color-orange;
+          .client-name {
+            color: #000;
+          }
+        }
+        p{
+          margin-top: 10px;
+          font-size: 13px;
+          color: @subText;
+        }
+        .investment-data-container {
+          height: 600px;
+          margin-top: 40px;
+          .investment-data-nav{
+            list-style: none;
+            .flex-container;
+            height: 40px;
+            position: relative;
+            top: 1px;
+            .nav-tab {
+              width: 135px;
+              margin-right: 1px;
+              line-height: 40px;
+              border: 1px solid @color-warmGrey;
+              border-radius: 5px 5px 0 0;
+              text-align: center;
+              font-size: 12px;
+              font-weight: 200;
+              background-color: @color-lightGrey;
+              cursor: pointer;
+
+              &.active {
+                background-color: #fff;
+                border-bottom: 1px solid #fff;
+                cursor: default;
+              }
+            }
+          }
+
+          .investment-data-content {
+            height: 615px;
+            border: 1px solid @color-warmGrey;
+            .investment-tab {
+              .perfect-center;
+              display: none;
+              height: 100%;
+              background-size: contain;
+              background-repeat: no-repeat;
+              &.tab-0 {
+                .image-2x('../images/mocks/tab-0.png', 100%, 100%, @repeat: no-repeat);
+              }
+              &.tab-1{
+                background-image: url('../images/mocks/tab-1.png');
+              }
+              &.tab-2 {
+                background-image: url('../images/mocks/tab-2.png');
+              }
+              &.tab-3{
+                background-image: url('../images/mocks/tab-3.png');
+              }
+              &.active {
+                display: block;
+              }
+            }
+          }
+        }
+      }
+      .content-right {
+        .score-holder {
+          height: 110px;
+          text-align: center;
+          font-size: 44px;
+          color: @color-cheese;
+          .label{
+            font-size: 11px;
+            display: block;
+            color: @color-darkText;
+            margin-top: 10px;
+          }
+        }
+        .widget-holder{
+          width: 350px;
+          height:auto;
+          padding-bottom: 40px;
+
+          .ths-feed-wrap .ths-fullscreen {
+            top: 0 !important;
+            left: 0 !important;
+            height: 100% !important;
+            width: 100% !important;
+          }
+        }
+      }
+    }
+  }
+
+  .ths-messages-holder{
+    height: 215px !important;
+  }
+
+  footer{
+    height: 348px;
+    min-width: 1024px;
+    margin: 0;
+    .image-2x('../images/mocks/doctor-footer.png', 1300px, 348px, @repeat: no-repeat);
+    background-repeat: no-repeat;
+    background-color: #5C5C5C;
+    background-position: center top;
+  }
+}

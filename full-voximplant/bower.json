@@ -1,0 +1,9 @@
+{
+  "name": "ths",
+  "version": "0.0.0",
+  "dependencies": {
+    "eonasdan-bootstrap-datetimepicker": "~4.17.37",
+    "bootstrap": "~3.3.6"
+  },
+  "devDependencies": {}
+}

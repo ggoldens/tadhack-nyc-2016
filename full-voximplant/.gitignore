@@ -1,0 +1,9 @@
+node_modules/
+ssl/
+.idea
+.DS_Store
+.vscode
+.tmp
+.bowerrc
+.sass-cache
+.idea

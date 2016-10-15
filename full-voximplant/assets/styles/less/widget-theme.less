@@ -1,0 +1,18 @@
+/*Icon Families*/
+.theme-color-style(@color:red){
+  .btn-start-call,
+  .ths-message-sent .ths-user-name-initial,
+  .ths-send-message-box button:hover{
+    background-color: @color;
+  }  
+}
+.ths-icon-set-main{
+  .icon-set(@path:main); 
+  .theme-color-style(@color:@color-darkSkyBlue);
+}
+
+.ths-icon-set-alt{
+  .icon-set(@path:alt); 
+  .theme-color-style(@color:@color-cool-blue);
+}
+

@@ -1,0 +1,167 @@
+<div class="main-bg client-mock" id={{sessionAlias}}>
+
+<header class="meeting">
+  <div class="inner">
+    {{> navbar}}
+    <div class="appointment-center">
+      <ul class="account-menu">
+        <li class="account-menu-item"><a href="/health-chart">Your Profile</a></li>
+        <li class="account-menu-item active">Talk to your doctor</li>
+        <li class="account-menu-item">Medical Records</li>
+        <li class="account-menu-item">Prescriptions &amp; Pharmacy</li>
+        <li class="account-menu-item"><a href="/health-chart/appointment">Appointment Center</a></li>
+        <li class="account-menu-item">Insurance &amp; Payments</li>
+      </ul>
+      <div class="body chat-hidden">
+        <div class="widget-holder" id="main_container"></div>
+        <div class="appointment-summary">
+          <img src="../images/mocks/appointment-summary@2x.jpg" />
+          <span class="client-name"></span>
+          <span class="appointment-time"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<div style="float: none;" ></div>
+
+<div class="navbar"></div>
+
+<div class="error-bar warning">
+  <span>You are sharing your screen</span>
+</div>
+
+<div class="client-meeting">
+  <div class="inner">
+  </div>
+</div>
+
+<div class="client-appointment">
+  <div class="inner">
+  </div>
+</div>
+
+<div class="annotation-toolbar-container">
+    <div id="toolbar"></div>
+</div>
+
+<footer>
+  <div class="inner">
+  </div>
+</footer>
+
+</div>
+<script type="text/javascript">
+
+  $(document).ready(function() {
+
+      var options = {
+        user: {
+            name: 'Justin Brown',
+            id:234,
+            role:'patient'
+        },
+        client_profile: {
+            name: 'Bill Smith',
+            age: 42,
+            gender: 'Male',
+            ocupation: 'Doctor',
+            goal: 'Early Retirement',
+            notes: []
+        },
+        value: 20,
+        chatHidden: true,
+        onTHSStarted:function(){
+            $('.ths-messages-header').html('')
+              .html('<span>Chat with Dr. Bill</span>')
+              .removeClass('hidden');
+        },
+        onTHSEnded:function(){
+            console.log('Telehealth Solution widget ENDED');
+        },
+        onTHSError:function(error){
+          console.log('There is an error loading the Telehealth Solution widget: ' + error.message);
+        },
+        onMessageBoxToggled:function(visible) {
+          if (visible) $('#main_container').parent().removeClass('chat-hidden');
+          else $('#main_container').parent().addClass('chat-hidden');
+        },
+        el: $("#main_container"),
+        extensionID: 'gedbacbcklcdapchpicmdbhnokdlnlln',
+        extensionPathFF: 'ff-extension',
+        annotation: false
+      };
+
+
+      var bootstrap = function(user) {
+
+          var init = function(session) {
+
+              options.user.name = [session.client.firstName, session.client.lastName].join(' ');
+              options.apiKey = session.apiKey;
+              options.sessionId = session.sessionId;
+              options.token = session.patientToken;
+
+              ths.init(options);
+          };
+
+          var getNextAppointment = function(user, cb) {
+              $.get(['/health-chart/appointment/client/', user.id, '?token=', user.auth.token].join(''))
+                .then(function(appointments) {
+                  var first = appointments[0];
+                  if (first) {
+                    cb(first.id);
+                  } else {
+                    // redirect to list?
+                  }
+                }, function(error) {
+                  console.log('ruh roh', error);
+                })
+          }
+
+          var connectAppointment = function(appointmentId) {
+              var baseUrl = ['/health-chart/appointment/', appointmentId, '/session'].join('');
+              var query = ['?role=patient&token=', user.token].join('');
+
+              // Get session info
+              $.get([baseUrl, query].join(''))
+              .then(function(session) {
+                  var details = session.details;
+                  $('.appointment-time').text([details.time, details.date].join(', '));
+                  init(session);
+              })
+          }
+
+          var appointmentId = window.location.search.slice(1).split('=')[1];
+          if (appointmentId) connectAppointment(appointmentId);
+          else {
+              getNextAppointment(user, connectAppointment);
+          }
+      };
+
+      var loginDefaultUser = function(cb) {
+
+        var deferred = $.Deferred();
+
+        $.post('/user/login', {user: { email: 'bizdev@tokbox.com', password: 'demo'}})
+          .then(function(user) {
+            window.localStorage.setItem('currentUser', JSON.stringify(user));
+            setupNavBar();
+            cb(user);
+            deferred.resolve();
+          }, function (error) {
+            $('.login-error').text(error.responseText);
+            deferred.reject();
+        });
+
+        return deferred.promise();
+      };
+
+      var user = JSON.parse(window.localStorage.getItem('currentUser'));
+      if (user) { bootstrap(user); }
+      else { loginDefaultUser(bootstrap); }
+  });
+
+</script>
+
+{{> nav-updater}}
